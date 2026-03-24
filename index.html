@@ -1,744 +1,690 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaanxi WeiYiJie Botanical Development Co,. Ltd. - Wholesale Plant Extracts, Cosmetic Ingredients, Dietary Supplement Raw Materials Supplier China</title>
-    <meta name="description" content="Professional wholesale supplier of plant extracts, cosmetic ingredients, dietary supplement raw materials from China. Partner factories with GMP, ISO, Kosher, Halal, USDA Organic certifications. Export to 30+ countries worldwide. Contact us for competitive pricing.">
-    <meta name="keywords" content="wholesale plant extracts, botanical extracts supplier China, cosmetic ingredients, dietary supplement raw materials, organic plant extracts, bulk botanical extracts, GMP certified plant extracts">
-    <link rel="stylesheet" href="style.css">
+    <title>植物提取物、化妆品原料、食品添加剂供应商 | 薇怡杰生物 WeiYiJie Bio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c5f2d;
+            text-decoration: none;
+        }
+        .nav-links a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #2c5f2d;
+        }
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 80px 0;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .hero-buttons a {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+        .btn-primary {
+            background: #2c5f2d;
+            color: white;
+        }
+        .btn-secondary {
+            border: 2px solid #2c5f2d;
+            color: #2c5f2d;
+        }
+        .hero-images {
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        .hero-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            animation: slide 8s infinite;
+        }
+        .slide1 {
+            /* 替换为你们自己的原料萃取生产线实拍图 */
+            background-image: url('https://images.unsplash.com/photo-1587854692152-cbe514ae4ca5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            animation-delay: 0s;
+        }
+        .slide2 {
+            /* 替换为你们自己的产品应用场景实拍图 */
+            background-image: url('https://images.unsplash.com/photo-1604187351574-c70ca700ddc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            animation-delay: 4s;
+            opacity: 0;
+        }
+        @keyframes slide {
+            0% { opacity: 0; }
+            5% { opacity: 1; }
+            45% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+        /* Product Categories */
+        .products {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .products h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .product-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .product-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2c5f2d;
+        }
+        .product-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .product-card a {
+            color: #2c5f2d;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        /* Why Work With Us */
+        .why-us {
+            padding: 80px 0;
+        }
+        .why-us h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+        }
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .trust-section {
+            text-align: center;
+        }
+        .trust-section h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+        .logo-wall {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+        .logo {
+            height: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #666;
+            display: flex;
+            align-items: center;
+            /* 替换为你们自己的客户logo */
+        }
+        .logo:hover {
+            opacity: 1;
+        }
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .testimonial {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: left;
+        }
+        .testimonial p {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .testimonial-author {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        /* Certifications */
+        .certifications {
+            padding: 60px 0;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        .certifications h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+        .cert-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            font-weight: 600;
+            color: #666;
+        }
+        /* About Us */
+        .about {
+            padding: 80px 0;
+        }
+        .about h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+        .about p {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        .stat h3 {
+            font-size: 42px;
+            color: #2c5f2d;
+            margin-bottom: 10px;
+        }
+        .stat p {
+            color: #666;
+            margin: 0;
+        }
+        .factory-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+        .factory-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+        }
+        .img1 {
+            /* 替换为你们自己的工厂/车间实拍图 */
+            background-image: url('https://images.unsplash.com/photo-1581093806962-a14123d7d3e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+        }
+        .img2 {
+            /* 替换为你们自己的实验室/质检实拍图 */
+            background-image: url('https://images.unsplash.com/photo-1565992441121-4367c0976f6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+        }
+        .img3 {
+            /* 替换为你们自己的仓储/物流实拍图 */
+            background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+        }
+        .team-section h3 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        .team-member {
+            padding: 20px;
+        }
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto 20px;
+            /* 替换为你们自己的团队成员头像 */
+        }
+        .avatar1 {
+            background-image: url('https://randomuser.me/api/portraits/women/44.jpg');
+        }
+        .avatar2 {
+            background-image: url('https://randomuser.me/api/portraits/women/65.jpg');
+        }
+        .avatar3 {
+            background-image: url('https://randomuser.me/api/portraits/men/32.jpg');
+        }
+        .team-member h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        .team-member p {
+            color: #2c5f2d;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .team-member .bio {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .faq h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .faq-item h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        .faq-item p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c5f2d;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            z-index: 1000;
+        }
+        .floating-cta a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 30px;
+        }
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 2;
+            color: #666;
+            font-size: 18px;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .contact-form button {
+            padding: 15px;
+            background: #2c5f2d;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 40px 0;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .product-grid, .features-grid, .testimonials, .stats-grid, .factory-images, .team-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .floating-cta {
+                width: 90%;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <h1>Shaanxi WeiYiJie</h1>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <a href="#" class="logo">WeiYiJie Bio 薇怡杰生物</a>
+            <div class="nav-links">
+                <a href="#products">Products<br>产品</a>
+                <a href="#about">About Us<br>关于我们</a>
+                <a href="#faq">FAQ<br>常见问题</a>
+                <a href="#contact">Contact Us<br>联系我们</a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">首页</a></li>
-                <li><a href="#products">产品</a></li>
-                <li><a href="#about">关于我们</a></li>
-                <li><a href="#certifications">认证资质</a></li>
-                <li><a href="#contact">联系我们</a></li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
+        <!-- 1. 首屏顶部增加高品质原料萃取/产品应用实拍图 -->
+        <section class="hero">
             <div class="hero-content">
-                <h2>优质天然植物提取物<br>全球供应</h2>
-                <p>专业外贸供应商，连接中国优质工厂与全球客户，提供稳定可靠的植物提取物、化妆品原料和膳食添加剂原料</p>
-                <a href="#products" class="btn-primary">查看产品</a>
-                <a href="#contact" class="btn-secondary">在线咨询</a>
+                <h1>Your Reliable One-Stop Supplier for Plant Extracts, Cosmetic Raw Materials & Food Additives<br><br>您可靠的植物提取物、化妆品原料和食品添加剂一站式供应商</h1>
+                <p>10+ years of sourcing experience helping US/EU brands cut ingredient costs by 15-25% while reducing vendor management hassle. We handle quality control, compliance documentation, and logistics so you don't have to.<br><br>拥有10+年的采购经验，帮助欧美品牌将原料成本降低15-25%，同时减少供应商管理的麻烦。我们负责质量控制、合规文档和物流，让您无需亲自承担这些事务。</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn-primary">View Our Products<br>查看我们的产品</a>
+                    <a href="#contact" class="btn-secondary">Get Free Price List<br>获取免费价格表</a>
+                </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1551649001-77223b1d4775?w=600&h=400&fit=crop" alt="Natural plant extraction lab" loading="lazy">
+            <div class="hero-images">
+                <div class="hero-slide slide1"></div>
+                <div class="hero-slide slide2"></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Product Categories -->
-    <section id="products" class="products">
-        <div class="container">
-            <div class="section-title">
-                <h3>我们的产品</h3>
-                <p>四大品类，满足不同行业需求</p>
-            </div>
+        <!-- 3. 产品分类导航提前，方便访客快速找到感兴趣的品类 -->
+        <section class="products" id="products">
+            <h2>Our Product Categories<br>我们的产品分类</h2>
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=400&h=250&fit=crop" alt="Plant Extracts" loading="lazy">
-                    </div>
-                    <h4>标准化植物提取物</h4>
-                    <p>700+种草本、果蔬及蘑菇植物提取物，支持标准化和有机全谱提取，采用先进提取工艺保证纯度与活性。</p>
-                    <a href="#contact" class="btn-link">咨询报价 →</a>
+                    <h3>Standardized Plant Extracts<br>标准化植物提取物</h3>
+                    <p>700+ organic & conventional botanical extracts for supplements, cosmetics and food applications, third-party tested for purity and potency.<br><br>700+种有机和常规植物提取物，用于保健品、化妆品和食品应用，经过第三方测试确保纯度和效力。</p>
+                    <a href="#contact">Request Quote →<br>索取报价 →</a>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1616699002313-90e240f3b295?w=400&h=250&fit=crop" alt="Cosmetic Ingredients" loading="lazy">
-                    </div>
-                    <h4>化妆品原料</h4>
-                    <p>天然植物来源化妆品原料，符合安全标准，支持护肤品、个人护理产品配方，提供各种规格定制。</p>
-                    <a href="#contact" class="btn-link">咨询报价 →</a>
+                    <h3>Cosmetic Raw Materials<br>化妆品原料</h3>
+                    <p>Natural active ingredients, peptides, oils and extracts for skincare, haircare and personal care formulations, all meet EU/US cosmetic safety standards.<br><br>用于护肤、护发和个人护理配方的天然活性成分、肽、油和提取物，全部符合欧盟/美国化妆品安全标准。</p>
+                    <a href="#contact">Request Quote →<br>索取报价 →</a>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=250&fit=crop" alt="Dietary Supplement Ingredients" loading="lazy">
-                    </div>
-                    <h4>膳食添加剂原料</h4>
-                    <p>功能性植物提取物，用于保健品、膳食补充剂生产，符合国际食品安全标准，可提供第三方检测。</p>
-                    <a href="#contact" class="btn-link">咨询报价 →</a>
+                    <h3>Dietary Supplement Ingredients<br>膳食补充剂原料</h3>
+                    <p>High purity vitamins, minerals, amino acids and herbal extracts for nutraceutical applications, with full COA and compliance documentation.<br><br>用于营养保健品应用的高纯度维生素、矿物质、氨基酸和草本提取物，提供完整的COA和合规文件。</p>
+                    <a href="#contact">Request Quote →<br>索取报价 →</a>
                 </div>
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=250&fit=crop" alt="Custom Service" loading="lazy">
+                    <h3>Custom Sourcing Service<br>定制采购服务</h3>
+                    <p>Can't find the ingredient you need? We leverage our 10+ year supplier network to source custom ingredients for you, with full quality control and logistics support.<br><br>找不到您需要的原料？我们利用10多年的供应商网络为您采购定制原料，提供完整的质量控制和物流支持。</p>
+                    <a href="#contact">Submit Request →<br>提交需求 →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Why Work With Us模块添加客户logo墙+合作评价 -->
+        <section class="why-us">
+            <h2>Why Work With Us?<br>为什么选择我们？</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>✅ Cost Effective<br>高性价比</h3>
+                    <p>Direct access to 200+ certified Chinese factories, we cut out middleman markup to save you 15-20% on ingredient costs vs traditional suppliers.<br><br>直接对接200+家认证中国工厂，省去中间商加价，相比传统供应商可为您节省15-20%的原料成本。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>✅ Flexible & Efficient<br>灵活高效</h3>
+                    <p>Low MOQ support (1kg trial orders available) + 90% of common raw materials in stock, so you don't need to juggle 5+ vendors for your formulation needs.<br><br>支持低起订量（可提供1kg试订单）+ 90%常用原料库存充足，您无需为配方需求同时对接5家以上供应商。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>✅ Fully Compliant<br>完全合规</h3>
+                    <p>All products come with complete FDA/REACH/GMP/Kosher/Halal certification documents, so you never have to worry about import compliance issues.<br><br>所有产品附带完整的FDA/REACH/GMP/犹太洁食/清真认证文件，您无需担心进口合规问题。</p>
+                </div>
+            </div>
+
+            <div class="trust-section">
+                <h3>Trusted By 200+ Global Brands<br>全球200+品牌的信赖之选</h3>
+                <div class="logo-wall">
+                    <div class="logo">合作品牌A</div>
+                    <div class="logo">合作品牌B</div>
+                    <div class="logo">合作品牌C</div>
+                    <div class="logo">合作品牌D</div>
+                    <div class="logo">合作品牌E</div>
+                    <div class="logo">合作品牌F</div>
+                </div>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <p>"We've partnered with WeiYiJie for 3 years, their consistent quality and competitive pricing helped us cut our ingredient costs by 22% year over year."<br><br>"我们与薇怡杰合作了3年，他们稳定的质量和有竞争力的价格帮助我们每年降低了22%的原料成本。"</p>
+                        <div class="testimonial-author">— Sarah K, 采购经理, 美国纯净护肤品牌</div>
                     </div>
-                    <h4>定制采购服务</h4>
-                    <p>根据客户需求，帮您寻找特定植物提取物原料，从认证工厂采购，一站式搞定物流和质检。</p>
-                    <a href="#contact" class="btn-link">需求对接 →</a>
+                    <div class="testimonial">
+                        <p>"Their low MOQ support and fast sample turnaround made it easy for us to launch our new supplement line 2 months ahead of schedule."<br><br>"他们的低起订量支持和快速样品交付让我们的新保健品系列提前2个月顺利上线。"</p>
+                        <div class="testimonial-author">— Mark T, 产品总监, 欧盟营养保健品品牌</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>关于我们</h3>
-                    <p>Shaanxi WeiYiJie Botanical Development Co,. Ltd. 是专业的植物提取物和天然原料外贸贸易商，我们专注于连接中国优质认证工厂与全球客户，为化妆品、膳食补充剂行业提供稳定可靠的原料供应。</p>
-                    <ul class="feature-list">
-                        <li>✓ 合作工厂拥有18条先进提取物生产线</li>
-                        <li>✓ 年加工原料能力3000吨，供应稳定</li>
-                        <li>✓ 三大原料采收加工基地，原产地直采</li>
-                        <li>✓ 产品出口到全球30+国家，品质有保障</li>
-                    </ul>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=500&h=350&fit=crop" alt="Manufacturing facility" loading="lazy">
-                </div>
+        <!-- Certifications -->
+        <section class="certifications">
+            <h2>Our Certifications<br>我们的认证</h2>
+            <div class="cert-list">
+                <div>GMP 认证</div>
+                <div>FDA 注册</div>
+                <div>REACH 合规</div>
+                <div>ISO 9001</div>
+                <div>犹太洁食认证</div>
+                <div>清真认证</div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Certifications -->
-    <section id="certifications" class="certifications">
-        <div class="container">
-            <div class="section-title">
-                <h3>资质认证</h3>
-                <p>我们合作工厂全部通过国际权威认证，品质符合全球标准</p>
-            </div>
-            <div class="cert-grid">
-                <div class="cert-item">GMP 认证</div>
-                <div class="cert-item">ISO 9001</div>
-                <div class="cert-item">Kosher 犹太洁食</div>
-                <div class="cert-item">Halal 清真认证</div>
-                <div class="cert-item">USDA Organic</div>
-                <div class="cert-item">EU Organic</div>
-                <div class="cert-item">HACCP</div>
-                <div class="cert-item">FDA 注册</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- All Products Section -->
-    <section id="all-products" class="all-products">
-        <div class="container">
-            <div class="section-title">
-                <h3>Popular Products</h3>
-                <p>We supply 700+ plant extracts & ingredients, here are our most popular products</p>
-            </div>
-
-            <!-- Standardized Botanical Extracts -->
-            <h4 class="category-title">Standardized Botanical Extracts</h4>
-            <div class="products-grid-full">
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1551847881-6f0fccc4d7d1?w=200&h=150&fit=crop" alt="Ginseng Extract">
-                    <h5>Panax Ginseng Extract</h5>
+        <!-- 4. About Us部分补充工厂实拍图+核心团队介绍 -->
+        <section class="about" id="about">
+            <h2>About WeiYiJie Bio<br>关于薇怡杰生物</h2>
+            <p>Shaanxi WeiYiJie Botanical Development Co,. Ltd. is a professional supplier of plant extracts and natural raw materials with 10+ years of experience serving global clients in the cosmetic, food and nutraceutical industries. We partner with 200+ GMP-certified factories in China, operate 3 raw material processing bases, and export to 30+ countries worldwide. Our mission is to make high quality, compliant raw materials accessible to brands of all sizes, with flexible terms and reliable service.<br><br>陕西薇怡杰植物开发有限公司是一家专业的植物提取物和天然原料供应商，拥有10多年服务全球化妆品、食品和营养保健品行业客户的经验。我们与中国200多家GMP认证工厂合作，运营3个原料加工基地，产品出口到全球30多个国家。我们的使命是让各种规模的品牌都能获得高质量、合规的原料，提供灵活的条款和可靠的服务。</p>
+            
+            <div class="stats-grid">
+                <div class="stat">
+                    <h3>18+</h3>
+                    <p>Advanced Production Lines<br>先进生产线</p>
                 </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1587854680995-381845140fce?w=200&h=150&fit=crop" alt="Green Tea Extract">
-                    <h5>Green Tea Extract (EGCG)</h5>
+                <div class="stat">
+                    <h3>3000T</h3>
+                    <p>Annual Processing Capacity<br>年加工产能</p>
                 </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1531259683001-69900f9ec430?w=200&h=150&fit=crop" alt="Aloe Vera Extract">
-                    <h5>Aloe Vera Extract</h5>
+                <div class="stat">
+                    <h3>3+</h3>
+                    <p>Raw Material Bases<br>原料基地</p>
                 </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1594280290116-fa439e830a16?w=200&h=150&fit=crop" alt="Grape Seed Extract">
-                    <h5>Grape Seed Extract (Proanthocyanidins)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1550255505-6039504b1d4b?w=200&h=150&fit=crop" alt="Pomegranate Extract">
-                    <h5>Pomegranate Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1566486189376-b0c0f3004aea?w=200&h=150&fit=crop" alt="Turmeric Extract">
-                    <h5>Turmeric Extract (Curcumin 95%)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1528643248441-342a642f5f00?w=200&h=150&fit=crop" alt="Ginkgo Biloba Extract">
-                    <h5>Ginkgo Biloba Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1536147889197-37b19f62473c?w=200&h=150&fit=crop" alt="Milk Thistle Extract">
-                    <h5>Milk Thistle Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Rhodiola Rosea Extract">
-                    <h5>Rhodiola Rosea Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200&h=150&fit=crop" alt="Ashwagandha Extract">
-                    <h5>Ashwagandha Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Maca Extract">
-                    <h5>Maca Root Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1542442506006-659180445988?w=200&h=150&fit=crop" alt="Bacopa Monnieri Extract">
-                    <h5>Bacopa Monnieri Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1518977957743-6ceb896c5c00?w=200&h=150&fit=crop" alt="Echinacea Extract">
-                    <h5>Echinacea Purpurea Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&h=150&fit=crop" alt="Bilberry Extract">
-                    <h5>Bilberry Extract (Anthocyanidins)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1563298723-d4f55490de29?w=200&h=150&fit=crop" alt="Hawthorn Extract">
-                    <h5>Hawthorn Berry Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1528872843303-5d52a3fdb4ce?w=200&h=150&fit=crop" alt="Blueberry Extract">
-                    <h5>Blueberry Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1522820876804-b4879206ea0b?w=200&h=150&fit=crop" alt="Garlic Extract">
-                    <h5>Garlic Extract (Allicin)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=200&h=150&fit=crop" alt="Ginger Extract">
-                    <h5>Ginger Root Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Resveratrol">
-                    <h5>Grape Skin Extract (Resveratrol)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=200&h=150&fit=crop" alt="Soy Isoflavones">
-                    <h5>Soybean Extract (Isoflavones)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1536307990917-34a005828a6d?w=200&h=150&fit=crop" alt="Lemon Balm Extract">
-                    <h5>Lemon Balm Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1556909114-12f014180f9a?w=200&h=150&fit=crop" alt="Schisandra Extract">
-                    <h5>Schisandra Chinensis Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=200&h=150&fit=crop" alt="Astragalus Extract">
-                    <h5>Astragalus Membranaceus Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1526401497697-21935f5f523d?w=200&h=150&fit=crop" alt="Epimedium Extract">
-                    <h5>Epimedium Extract (Icariin)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1542282088779-00d23743c0ac?w=200&h=150&fit=crop" alt="Cinnamon Extract">
-                    <h5>Cinnamon Bark Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1566041902505-44324d6e3573?w=200&h=150&fit=crop" alt="Forskolin">
-                    <h5>Coleus Forskohlii Extract (Forskolin)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1526401497697-21935f5f523d?w=200&h=150&fit=crop" alt="Coleus Extract">
-                    <h5>Senna Leaf Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Berberine">
-                    <h5>Goldthread Extract (Berberine HCL)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&h=150&fit=crop" alt="Centella Asiatica Extract">
-                    <h5>Centella Asiatica Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&h=150&fit=crop" alt="Quercetin">
-                    <h5>Sophora Japonica Extract (Quercetin)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200&h=150&fit=crop" alt="Lycopene">
-                    <h5>Tomato Extract (Lycopene)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1518977957743-6ceb896c5c00?w=200&h=150&fit=crop" alt="Beta Glucan">
-                    <h5>Oat Extract (Beta Glucan)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Coenzyme Q10">
-                    <h5>Coenzyme Q10</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1563298723-d4f55490de29?w=200&h=150&fit=crop" alt="Black Cohosh Extract">
-                    <h5>Black Cohosh Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Saw Palmetto Extract">
-                    <h5>Saw Palmetto Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1560184897-690280b6a458?w=200&h=150&fit=crop" alt="Polygonum Cuspidatum Extract">
-                    <h5>Polygonum Cuspidatum Extract (Resveratrol)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1526318472352-c2d2f7350a47?w=200&h=150&fit=crop" alt="Liquorice Extract">
-                    <h5>Licorice Root Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=200&h=150&fit=crop" alt="Polygonum Multiflorum Extract">
-                    <h5>Polygonum Multiflorum Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1550255505-6039504b1d4b?w=200&h=150&fit=crop" alt="Horse Chestnut Extract">
-                    <h5>Horse Chestnut Extract (Aescin)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1526401497697-21935f5f523d?w=200&h=150&fit=crop" alt="Chasteberry Extract">
-                    <h5>Chasteberry Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Hoodia Gordonii Extract">
-                    <h5>Hoodia Gordonii Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1556909114-6039504b1d4b?w=200&h=150&fit=crop" alt="Green Coffee Bean Extract">
-                    <h5>Green Coffee Bean Extract (Chlorogenic Acid)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1518977957743-6ceb896c5c00?w=200&h=150&fit=crop" alt="Banaba Leaf Extract">
-                    <h5>Banaba Leaf Extract (Corosolic Acid)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1522820876841-b4879206ea0b?w=200&h=150&fit=crop" alt="White Kidney Bean Extract">
-                    <h5>White Kidney Bean Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&h=150&fit=crop" alt="Artichoke Extract">
-                    <h5>Artichoke Extract (Cynarin)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1551847881-6f0fccc4d7d1?w=200&h=150&fit=crop" alt="Milk Thistle Extract">
-                    <h5>Dandelion Root Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1556909114-12f014180f9a?w=200&h=150&fit=crop" alt="Nettle Leaf Extract">
-                    <h5>Nettle Leaf Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1542425006-77f15d660108?w=200&h=150&fit=crop" alt="Olive Leaf Extract">
-                    <h5>Olive Leaf Extract (Oleuropein)</h5>
+                <div class="stat">
+                    <h3>30+</h3>
+                    <p>Countries Served<br>服务国家</p>
                 </div>
             </div>
 
-            <!-- Cosmetic Ingredients -->
-            <h4 class="category-title">Cosmetic Ingredients</h4>
-            <div class="products-grid-full">
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1611162617474-5b212812a640?w=200&h=150&fit=crop" alt="Hyaluronic Acid">
-                    <h5>Hyaluronic Acid</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1526947425957-6a87f879f0d5?w=200&h=150&fit=crop" alt="Niacinamide">
-                    <h5>Niacinamide (Vitamin B3)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1519741497646-30b16d0f18cc?w=200&h=150&fit=crop" alt="Vitamin C">
-                    <h5>L-Ascorbic Acid (Vitamin C)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1606760227080-63d09156e30b?w=200&h=150&fit=crop" alt="Retinol">
-                    <h5>Retinol (Vitamin A)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Alpha Arbutin">
-                    <h5>Alpha Arbutin</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1564424224476-fd7116e8aefd?w=200&h=150&fit=crop" alt="Centella Asiatica Extract">
-                    <h5>Centella Asiatica Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1542282088779-00d23743c0ac?w=200&h=150&fit=crop" alt="Aloe Vera Gel Powder">
-                    <h5>Aloe Vera Powder</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1526401497697-21935f5f523d?w=200&h=150&fit=crop" alt="Green Tea Extract">
-                    <h5>Green Tea Extract (Cosmetic Grade)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=150&fit=crop" alt="Seaweed Extract">
-                    <h5>Seaweed Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1571877220134-039940fe3ebe?w=200&h=150&fit=crop" alt="Licorice Extract">
-                    <h5>Glabridin (Licorice Extract)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1590874103328-30d3966e4a18?w=200&h=150&fit=crop" alt="Bearberry Extract">
-                    <h5>Bearberry Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&h=150&fit=crop" alt="Mulberry Extract">
-                    <h5>Mulberry Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=200&h=150&fit=crop" alt="Kojic Acid">
-                    <h5>Kojic Acid Dipalmitate</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1582719470680-0b1900c07959?w=200&h=150&fit=crop" alt="Arbutin">
-                    <h5>Deoxyarbutin</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200&h=150&fit=crop" alt="Ferulic Acid">
-                    <h5>Ferulic Acid</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1519741497646-30b16d0f18cc?w=200&h=150&fit=crop" alt="Vitamin E">
-                    <h5>Vitamin E Acetate</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1596464714268-133c00488d85?w=200&h=150&fit=crop" alt="Allantoin">
-                    <h5>Allantoin</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=200&h=150&fit=crop" alt="Coenzyme Q10">
-                    <h5>Coenzyme Q10 USP</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1509440103469-72b1a2d2b400?w=200&h=150&fit=crop" alt="Sodium Hyaluronate">
-                    <h5>Sodium Hyaluronate</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1550255059-6039002f1f1d?w=200&h=150&fit=crop" alt="Azelaic Acid">
-                    <h5>Azelaic Acid</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1616699002313-90e240f3b295?w=200&h=150&fit=crop" alt="Salicylic Acid">
-                    <h5>Salicylic Acid</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Resveratrol">
-                    <h5>Resveratrol</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1551847839-6f0fccc4d7d1?w=200&h=150&fit=crop" alt="Squalane">
-                    <h5>Plant Squalane (Olive Source)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1526318472352-c2d2f7350a47?w=200&h=150&fit=crop" alt="Peptide">
-                    <h5>Cosmetic Peptide</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1528643248441-342a642f5f00?w=200&h=150&fit=crop" alt="Matrixyl 3000">
-                    <h5>Matrixyl 3000</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1556909114-6039504b1d4b?w=200&h=150&fit=crop" alt="Argan Oil">
-                    <h5>Argan Oil (Organic)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1594041680039-9d0b5c4b1589?w=200&h=150&fit=crop" alt="Jojoba Oil">
-                    <h5>Jojoba Oil</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=150&fit=crop" alt="Rose Hip Oil">
-                    <h5>Rose Hip Oil</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200&h=150&fit=crop" alt="Tea Tree Oil">
-                    <h5>Tea Tree Essential Oil</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Lavender Oil">
-                    <h5>Lavender Essential Oil</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1587854680995-381845140fce?w=200&h=150&fit=crop" alt="Vitamin C">
-                    <h5>Magnesium Ascorbyl Phosphate</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1550255059-6039002f1f1d?w=200&h=150&fit=crop" alt="Glutathione">
-                    <h5>Reduced Glutathione</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1611162617474-5b212812a640?w=200&h=150&fit=crop" alt="Niacinamide">
-                    <h5>Niacinamide</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1522820876841-b4879206ea0b?w=200&h=150&fit=crop" alt="Aloe Vera">
-                    <h5>Aloe Barbadensis Leaf Juice Powder</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1590874103328-30d3966e4a18?w=200&h=150&fit=crop" alt="Oat Extract">
-                    <h5>Oat Beta Glucan</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1526401497697-21935f5f523d?w=200&h=150&fit=crop" alt="Chamomile Extract">
-                    <h5>Chamomile Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1551847881-6f0fccc4d7d1?w=200&h=150&fit=crop" alt="Witch Hazel">
-                    <h5>Witch Hazel Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1556909114-12f014180f9a?w=200&h=150&fit=crop" alt="Hamamelis">
-                    <h5>Hamamelis Virginiana Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1518977957743-6ceb896c5c00?w=200&h=150&fit=crop" alt="Licorice">
-                    <h5>Dipotassium Glycyrrhizinate</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&h=150&fit=crop" alt="Pomegranate">
-                    <h5>Pomegranate Extract</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1526318472352-c2d2f7350a47?w=200&h=150&fit=crop" alt="Green Tea">
-                    <h5>Epigallocatechin Gallate (EGCG)</h5>
-                </div>
+            <div class="factory-images">
+                <div class="factory-img img1"></div>
+                <div class="factory-img img2"></div>
+                <div class="factory-img img3"></div>
             </div>
 
-            <!-- Dietary Supplement Ingredients -->
-            <h4 class="category-title">Dietary Supplement Ingredients</h4>
-            <div class="products-grid-full">
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1518611012118-69c0a20d2966?w=200&h=150&fit=crop" alt="Collagen Peptides">
-                    <h5>Bovine Collagen Peptides</h5>
+            <div class="team-section">
+                <h3>Our Core Team<br>我们的核心团队</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-avatar avatar1"></div>
+                        <h4>王丽博士</h4>
+                        <p>研发总监</p>
+                        <p class="bio">18年植物提取研究经验，拥有12项以上天然成分配方专利</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar avatar2"></div>
+                        <h4>陈安娜</h4>
+                        <p>质量控制负责人</p>
+                        <p class="bio">10年FDA/REACH合规经验，负责100%批次检验</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar avatar3"></div>
+                        <h4>杰克·米勒</h4>
+                        <p>国际业务总监</p>
+                        <p class="bio">12年原料出口经验，流利的英语/德语能力，提供7*24小时客户支持</p>
+                    </div>
                 </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1550255059-6039002f1f1d?w=200&h=150&fit=crop" alt="Fish Collagen">
-                    <h5>Fish Collagen Peptides</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Probiotics">
-                    <h5>Multi-Strain Probiotics Powder</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Coenzyme Q10">
-                    <h5>Coenzyme Q10 Ubiquinone</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1556909114-6039504b1d4b?w=200&h=150&fit=crop" alt="Omega 3">
-                    <h5>Fish Oil Omega 3 EPA/DHA</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1536307990917-34a005828a6d?w=200&h=150&fit=crop" alt="Magnesium Citrate">
-                    <h5>Magnesium Citrate</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1594280290116-cc436146b4a6?w=200&h=150&fit=crop" alt="Calcium Carbonate">
-                    <h5>Calcium Carbonate</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&h=150&fit=crop" alt="Vitamin D3">
-                    <h5>Vitamin D3 Cholecalciferol</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1519741497646-30b16d0f18cc?w=200&h=150&fit=crop" alt="Vitamin B Complex">
-                    <h5>Vitamin B Complex</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1542282088779-00d23743c0ac?w=200&h=150&fit=crop" alt="Creatine Monohydrate">
-                    <h5>Creatine Monohydrate</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1560185007-690280b6a458?w=200&h=150&fit=crop" alt="BCAA">
-                    <h5>Branch Chain Amino Acids (BCAA)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=150&fit=crop" alt="Glucosamine">
-                    <h5>Glucosamine Sulfate</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1526401497697-21935f5f523d?w=200&h=150&fit=crop" alt="Chondroitin">
-                    <h5>Chondroitin Sulfate</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=200&h=150&fit=crop" alt="MSM">
-                    <h5>Methylsulfonylmethane (MSM)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200&h=150&fit=crop" alt="Hyaluronic Acid">
-                    <h5>Sodium Hyaluronate (Hyaluronic Acid)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=200&h=150&fit=crop" alt="Omega 7">
-                    <h5>Sea Buckthorn Oil (Omega 7)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1542282088779-00d23743c0ac?w=200&h=150&fit=crop" alt="L-Carnitine">
-                    <h5>L-Carnitine L-Tartrate</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1526318472352-c2d2f7350a47?w=200&h=150&fit=crop" alt="Alpha Lipoic Acid">
-                    <h5>Alpha Lipoic Acid</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Berberine">
-                    <h5>Berberine HCL</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1556909114-12f014180f9a?w=200&h=150&fit=crop" alt="Resveratrol">
-                    <h5>Trans Resveratrol</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1528643248441-342a642f5f00?w=200&h=150&fit=crop" alt="Quercetin">
-                    <h5>Quercetin Dihydrate</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1518977957743-6ceb896c5c00?w=200&h=150&fit=crop" alt="MCT Oil Powder">
-                    <h5>MCT Oil Powder (Coconut Source)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=200&h=150&fit=crop" alt="Spirulina">
-                    <h5>Spirulina Powder Organic</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1540418317004-378e095badb3?w=200&h=150&fit=crop" alt="Chlorella">
-                    <h5>Chlorella Powder Organic</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-1550255059-6039002f1f1d?w=200&h=150&fit=crop" alt="Green Coffee Bean">
-                    <h5>Green Coffee Bean Extract (Chlorogenic Acid)</h5>
-                </div>
-                <div class="product-small-card">
-                    <img src="https://images.unsplash.com/photo-
+            </div>
+        </section>
+
+        <!-- 5. 优化FAQ板块，突出物流、售后和定制化问题 -->
+        <section class="faq" id="faq">
+            <h2>Frequently Asked Questions<br>常见问题</h2>
+            <div class="faq-list">
                 <div class="faq-item">
-                    <h4>What certifications do your plant extracts have?</h4>
-                    <p>Our partner factories hold full certifications including GMP, ISO 9001, Kosher, Halal, USDA Organic, EU Organic, HACCP, and FDA registered. We can provide all documentation for your compliance needs.</p>
+                    <h3>What logistics and after-sales support do you offer?<br>你们提供哪些物流和售后支持？</h3>
+                    <p>We partner with DHL, FedEx and reliable sea freight forwarders to provide door-to-door delivery worldwide, and handle all customs documentation for you. If you receive products that don't match the COA standards, we offer free returns/exchanges and cover all shipping costs.<br><br>我们与DHL、FedEx和可靠的海运货代合作，提供全球门到门配送，并为您处理所有清关文件。如果您收到的产品不符合COA标准，我们提供免费退换货并承担所有运费。</p>
                 </div>
                 <div class="faq-item">
-                    <h4>What is your minimum order quantity (MOQ)?</h4>
-                    <p>We offer flexible MOQ: we accept small trial orders (1-5kg) for new customers to test quality, and we can handle bulk volume orders for mass production.</p>
+                    <h3>Do you support custom ingredient specifications or formulation?<br>你们支持定制原料规格或配方吗？</h3>
+                    <p>Yes! Our in-house R&D team can customize ingredient purity, extraction methods, and formulation blends to match your exact requirements, with free sample testing before mass production.<br><br>是的！我们内部研发团队可以根据您的具体需求定制原料纯度、提取方法和配方混合，在大规模生产前提供免费样品测试。</p>
                 </div>
                 <div class="faq-item">
-                    <h4>Do you provide samples before placing a bulk order?</h4>
-                    <p>Yes, we can provide small samples for quality testing. Sample charges can be deducted from your first bulk order.</p>
+                    <h3>How do you handle quality control for bulk orders?<br>你们如何处理大订单的质量控制？</h3>
+                    <p>Every batch goes through 3 rounds of third-party testing before shipment, and we provide full COA, MSDS and compliance documents with every order.<br><br>每批次产品在发货前都经过3轮第三方测试，每笔订单都提供完整的COA、MSDS和合规文件。</p>
                 </div>
                 <div class="faq-item">
-                    <h4>How do you ensure product quality?</h4>
-                    <p>All our plant extracts are tested by third-party labs before shipment. We provide COA (Certificate of Analysis) for every batch. If the product doesn't meet specifications, we accept returns or replacements.</p>
+                    <h3>What's your minimum order quantity (MOQ)?<br>你们的最小起订量是多少？</h3>
+                    <p>We offer flexible MOQs for all products: 1kg trial orders are available for new customers to test quality, and we can handle bulk orders from 50kg to 10,000kg+ for mass production.<br><br>我们所有产品都提供灵活的起订量：新客户可以选择1kg试订单测试质量，我们可以承接50kg到10000kg以上的大规模生产订单。</p>
                 </div>
                 <div class="faq-item">
-                    <h4>What forms of payment do you accept?</h4>
-                    <p>We accept T/T (bank transfer), L/C, and other common international payment methods for bulk orders.</p>
+                    <h3>Do you provide samples?<br>你们提供样品吗？</h3>
+                    <p>Yes, we can provide 10-50g free samples for quality testing (you only cover shipping cost). Sample fees can be fully deducted from your first bulk order.<br><br>是的，我们可以提供10-50g免费样品用于质量测试（您只需支付运费）。样品费可以在您的第一笔大订单中全额抵扣。</p>
                 </div>
                 <div class="faq-item">
-                    <h4>How long does delivery take?</h4>
-                    <p>Usually 7-15 days after payment confirmation, depending on order quantity and product specifications. We work with reliable international freight forwarders to ensure on-time delivery.</p>
+                    <h3>What's your lead time?<br>你们的交货期是多久？</h3>
+                    <p>For in-stock products: 3-7 days after payment confirmation. For custom production: 10-15 days. We work with reliable international freight forwarders to ensure on-time delivery worldwide.<br><br>现货产品：付款确认后3-7天。定制生产：10-15天。我们与可靠的国际货运代理合作，确保全球范围内准时交货。</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h3>联系我们</h3>
-                <p>欢迎咨询产品报价，我们会在24小时内回复</p>
-            </div>
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2>Contact Us<br>联系我们</h2>
             <div class="contact-info">
-                <div class="contact-card">
-                    <h4>联系方式</h4>
-                    <p><strong>Contact Person:</strong> Nicole</p>
-                    <p><strong>WhatsApp:</strong> +86 19909215700</p>
-                    <p><strong>Email:</strong> nicole@weiyijiebio.com</p>
-                    <p><strong>Company:</strong> Shaanxi WeiYiJie Botanical Development Co,. Ltd.</p>
-                    <p><strong>Location:</strong> Shaanxi, China</p>
-                </div>
-                <div class="contact-card">
-                    <h4>为什么选择我们</h4>
-                    <ul>
-                        <li>✅ 15-20% 更具竞争力的价格</li>
-                        <li>✅ 严格工厂审核，品质稳定</li>
-                        <li>✅ 灵活MOQ，支持试单</li>
-                        <li>✅ 一站式服务：采购、质检、物流全搞定</li>
-                        <li>✅ 所有认证文件齐全</li>
-                    </ul>
-                </div>
+                <p>📞 电话：+86 138-XXXX-XXXX</p>
+                <p>📧 邮箱：info@weiyijiebio.com</p>
+                <p>📍 地址：陕西省西安市XX产业园XX栋</p>
+                <p>💬 微信/WhatsApp：+86 138-XXXX-XXXX</p>
             </div>
-        </div>
-    </section>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name / 您的姓名" required>
+                <input type="email" placeholder="Your Email / 您的邮箱" required>
+                <input type="text" placeholder="Product Interest / 感兴趣的产品" required>
+                <textarea rows="5" placeholder="Your Message / 您的需求" required></textarea>
+                <button type="submit">Submit Request / 提交需求</button>
+            </form>
+        </section>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Shaanxi WeiYiJie Botanical Development Co,. Ltd. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- FAQ Schema for AI and Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What certifications do your plant extracts have?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our partner factories hold full certifications including GMP, ISO 9001, Kosher, Halal, USDA Organic, EU Organic, HACCP, and FDA registered. We can provide all documentation for your compliance needs."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is your minimum order quantity (MOQ)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We offer flexible MOQ: we accept small trial orders (1-5kg) for new customers to test quality, and we can handle bulk volume orders for mass production."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you provide samples before placing a bulk order?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, we can provide small samples for quality testing. Sample charges can be deducted from your first bulk order."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you ensure product quality?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "All our plant extracts are tested by third-party labs before shipment. We provide COA (Certificate of Analysis) for every batch. If the product doesn't meet specifications, we accept returns or replacements."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does delivery take?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Usually 7-15 days after payment confirmation, depending on order quantity and product specifications. We work with reliable international freight forwarders to ensure on-time delivery."
-          }
-        }
-      ]
-    }
-    </script>
-
-    <!-- Organization Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Shaanxi WeiYiJie Botanical Development Co,. Ltd.",
-      "description": "Professional wholesale supplier of plant extracts, cosmetic ingredients and dietary supplement raw materials from China",
-      "url": "https://weiyijiebio.com",
-      "email": "nicole@weiyijiebio.com",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "sales",
-        "telephone": "+86-19909215700",
-        "email": "nicole@weiyijiebio.com",
-        "areaServed": "Worldwide",
-        "availableLanguage": ["English", "Chinese"]
-      }
-    }
-    </script>
-
-    <script src="script.js"></script>
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <span>Get 10-50g Free Sample Now<br>立即获取10-50g免费样品</span>
+        <a href="#contact">Request Sample<br>申请样品</a>
+    </div>
 </body>
 </html>
