@@ -89,36 +89,31 @@ if (!product) {
         <div>
           <h3 class="text-xl font-bold text-gray-900 mb-4">Technical Specifications</h3>
           <table class="w-full">
-            <tr class="border-b border-gray-200">
-              <td class="py-3 font-medium text-gray-900">Specifications</td>
-              <td class="py-3 text-gray-600">{product.specifications.join(', ')}</td>
-            </tr>
-            <tr class="border-b border-gray-200">
-              <td class="py-3 font-medium text-gray-900">Purity</td>
-              <td class="py-3 text-gray-600">High purity, meets international standards</td>
-            </tr>
-            <tr class="border-b border-gray-200">
-              <td class="py-3 font-medium text-gray-900">Appearance</td>
-              <td class="py-3 text-gray-600">Fine powder</td>
-            </tr>
-            <tr class="border-b border-gray-200">
-              <td class="py-3 font-medium text-gray-900">Loss on Drying</td>
-              <td class="py-3 text-gray-600">≤5%</td>
-            </tr>
-            <tr class="border-b border-gray-200">
-              <td class="py-3 font-medium text-gray-900">Heavy Metals</td>
-              <td class="py-3 text-gray-600">≤10ppm</td>
-            </tr>
-            <tr class="border-b border-gray-200">
-              <td class="py-3 font-medium text-gray-900">Microbial Limit</td>
-              <td class="py-3 text-gray-600">Meet international standards</td>
-            </tr>
+            {product.specifications.map((spec, index) => {
+              // 拆分规格项为键值对
+              const parts = spec.split(/:|：|-|–/).map(s => s.trim());
+              const key = parts[0] || `Specification ${index + 1}`;
+              const value = parts.slice(1).join(': ') || spec;
+              return (
+                <tr class="border-b border-gray-200">
+                  <td class="py-3 font-medium text-gray-900">{key}</td>
+                  <td class="py-3 text-gray-600">{value}</td>
+                </tr>
+              );
+            })}
           </table>
         </div>
         <div>
           <h3 class="text-xl font-bold text-gray-900 mb-4">Applications</h3>
           <ul class="space-y-3">
-            {product.category === '植物提取物' && (
+            {product.applications && product.applications.length > 0 ? (
+              product.applications.map(app => (
+                <li class="flex items-start gap-3">
+                  <span class="text-green-500 mt-1">✅</span>
+                  <span class="text-gray-600">{app}</span>
+                </li>
+              ))
+            ) : product.category === '植物提取物' ? (
               <>
                 <li class="flex items-start gap-3">
                   <span class="text-green-500 mt-1">✅</span>
@@ -133,8 +128,7 @@ if (!product) {
                   <span class="text-gray-600">Functional food: Beverages, dietary supplements</span>
                 </li>
               </>
-            )}
-            {product.category === '化妆品原料' && (
+            ) : product.category === '化妆品原料' ? (
               <>
                 <li class="flex items-start gap-3">
                   <span class="text-green-500 mt-1">✅</span>
@@ -149,8 +143,7 @@ if (!product) {
                   <span class="text-gray-600">Meets all global cosmetic regulatory requirements</span>
                 </li>
               </>
-            )}
-            {product.category === '食品添加剂' && (
+            ) : (
               <>
                 <li class="flex items-start gap-3">
                   <span class="text-green-500 mt-1">✅</span>
