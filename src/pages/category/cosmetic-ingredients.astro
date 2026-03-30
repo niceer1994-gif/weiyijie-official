@@ -1,57 +1,24 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import productData from '../../data/products.json';
 
-const products = [
-  {
-    name: "Hyaluronic Acid Powder 99%",
-    slug: "hyaluronic-acid-powder",
-    description: "High molecular weight hyaluronic acid, 99% purity, excellent moisturizing effect for skincare products.",
-    image: "/images/products/hyaluronic-acid.jpg"
-  },
-  {
-    name: "Kojic Acid Dipalmitate 99%",
-    slug: "kojic-acid-dipalmitate",
-    description: "Skin whitening agent, 99% purity, stable and non-irritating, suitable for whitening creams and serums.",
-    image: "/images/products/kojic-acid.jpg"
-  },
-  {
-    name: "Alpha Arbutin 99.5%",
-    slug: "alpha-arbutin",
-    description: "Natural skin whitening ingredient, inhibits melanin production, suitable for all skin types.",
-    image: "/images/products/alpha-arbutin.jpg"
-  },
-  {
-    name: "Retinol (Vitamin A)",
-    slug: "retinol",
-    description: "Anti-aging ingredient, promotes collagen production, reduces fine lines and wrinkles.",
-    image: "/images/products/retinol.jpg"
-  },
-  {
-    name: "Niacinamide (Vitamin B3) 99%",
-    slug: "niacinamide",
-    description: "Multi-functional skincare ingredient, brightens skin tone, reduces pores, strengthens skin barrier.",
-    image: "/images/products/niacinamide.jpg"
-  },
-  {
-    name: "Ceramide Complex",
-    slug: "ceramide-complex",
-    description: "Repairs skin barrier, locks in moisture, suitable for sensitive and dry skin products.",
-    image: "/images/products/ceramide.jpg"
-  }
-];
+const products = productData.products.filter(p => p.category === '化妆品原料');
 ---
 
 <Layout 
   title="Cosmetic Raw Materials - Weiyijie Bio | Wholesale Cosmetic Ingredients Supplier"
-  description="Premium cosmetic raw materials wholesale supplier. We offer high quality active ingredients for skincare, haircare and personal care products. Full certifications, small MOQ supported."
+  description="High quality cosmetic raw materials wholesale supplier. We offer pure cosmetic active ingredients including moisturizers, antioxidants, whitening agents with full certifications. Small MOQ supported."
 >
-  <section class="py-12 bg-gradient-to-r from-purple-900 to-purple-800 text-white">
+  <!-- 页面头部 -->
+  <section class="py-12 bg-gradient-to-r from-pink-900 to-pink-800 text-white">
     <div class="container mx-auto px-6">
       <h1 class="text-[clamp(2rem,4vw,3rem)] font-bold mb-4">Cosmetic Raw Materials</h1>
-      <p class="text-purple-100 max-w-3xl text-lg">We supply high-purity cosmetic active ingredients for skincare, haircare and personal care products. All ingredients meet international safety standards, with complete certification documents available.</p>
+      <p class="text-pink-100 max-w-3xl text-lg">We provide a full range of high-purity cosmetic active ingredients, suitable for all kinds of skincare, hair care and makeup products. All materials meet international cosmetic safety standards, FDA and REACH certified.</p>
+      <p class="text-pink-200 mt-2 font-medium">Total products: {products.length}</p>
     </div>
   </section>
 
+  <!-- 产品列表 -->
   <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -62,15 +29,15 @@ const products = [
                 src={product.image} 
                 alt={product.name} 
                 class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-                onError={(e) => e.target.src = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'}
+                onError={(e) => e.target.src = 'https://placehold.co/600x400/ffffff/be185d?text=WEIYIJIE+Product'}
               />
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-2 line-clamp-2">{product.name}</h3>
               <p class="text-gray-600 mb-4 line-clamp-3">{product.description}</p>
               <div class="flex justify-between items-center">
-                <span class="text-purple-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
-                <span class="text-sm bg-purple-100 text-purple-800 px-3 py-1 rounded-full">In Stock</span>
+                <span class="text-pink-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
+                <span class="text-sm bg-pink-100 text-pink-800 px-3 py-1 rounded-full">In Stock</span>
               </div>
             </div>
           </a>
@@ -79,11 +46,12 @@ const products = [
     </div>
   </section>
 
-  <section class="py-12 bg-purple-50">
+  <!-- 咨询板块 -->
+  <section class="py-12 bg-pink-50">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-2xl font-bold text-gray-900 mb-4">Need Custom Cosmetic Ingredients or Formula Development?</h2>
-      <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Our R&D team can help you develop custom ingredients and formulas according to your product needs. Contact us today to get a free quote.</p>
-      <a href="/#contact" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-3 rounded-lg inline-block transition-all">
+      <p class="text-gray-600 mb-8 max-w-2xl mx-auto">We support custom ingredient specifications and formula development services. Contact us today to get a free quote and sample.</p>
+      <a href="/#contact" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-8 py-3 rounded-lg inline-block transition-all">
         Request Custom Quote
       </a>
     </div>

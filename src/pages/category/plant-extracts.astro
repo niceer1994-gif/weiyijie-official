@@ -1,98 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import productData from '../../data/products.json';
 
-const products = [
-  {
-    name: "High Quality Grape Seed Extract 95% Proanthocyanidins",
-    slug: "grape-seed-extract-95-proanthocyanidins",
-    description: "Natural grape seed extract with 95% proanthocyanidins, powerful antioxidant for cosmetics and health supplements.",
-    image: "/images/products/grape-seed-extract.jpg"
-  },
-  {
-    name: "Factory Bulk Organic Astragalus Root Extract",
-    slug: "organic-astragalus-root-extract",
-    description: "100% organic astragalus root extract, supports immune system function, suitable for health products.",
-    image: "/images/products/astragalus-root-extract.jpg"
-  },
-  {
-    name: "Natural Plant Milk Thistle Extract Powder",
-    slug: "milk-thistle-extract-powder",
-    description: "80% silymarin content, liver protection function, food grade and cosmetic grade available.",
-    image: "/images/products/milk-thistle-extract.jpg"
-  },
-  {
-    name: "High Quality Bulk Pure Shilajit Extract",
-    slug: "pure-shilajit-extract",
-    description: "Pure natural shilajit extract with high fulvic acid content, supports energy and immunity.",
-    image: "/images/products/shilajit-extract.jpg"
-  },
-  {
-    name: "Food-Grade Ginseng Extract",
-    slug: "ginseng-extract",
-    description: "10-80% ginsenosides content, suitable for health supplements and functional food.",
-    image: "/images/products/ginseng-extract.jpg"
-  },
-  {
-    name: "100% Water Soluble Natural Grapefruit Powder",
-    slug: "natural-grapefruit-powder",
-    description: "Spray dried grapefruit powder, no additives, suitable for beverages and food products.",
-    image: "/images/products/grapefruit-powder.jpg"
-  },
-  {
-    name: "Pure Natural Cranberry Fruit Powder",
-    slug: "cranberry-fruit-powder",
-    description: "Freeze dried cranberry powder, high PAC content, supports urinary tract health.",
-    image: "/images/products/cranberry-powder.jpg"
-  },
-  {
-    name: "Mango Fruit Powder for Dietary Supplements",
-    slug: "mango-fruit-powder",
-    description: "Natural mango fruit powder, rich in vitamins, suitable for food and cosmetic products.",
-    image: "/images/products/mango-powder.jpg"
-  },
-  {
-    name: "Non-Irradiated Pure Mango Powder",
-    slug: "non-irradiated-mango-powder",
-    description: "Non-irradiated, 100% natural mango powder, no preservatives, food grade.",
-    image: "/images/products/non-irradiated-mango-powder.jpg"
-  },
-  {
-    name: "Pure Natural Bulk Strawberry Powder",
-    slug: "strawberry-powder",
-    description: "Freeze dried strawberry powder, natural flavor and color, suitable for food and cosmetics.",
-    image: "/images/products/strawberry-powder.jpg"
-  },
-  {
-    name: "Pure Natural Watermelon Powder for Beverage",
-    slug: "watermelon-powder",
-    description: "Spray dried watermelon powder, 100% natural, no additives, perfect for beverage products.",
-    image: "/images/products/watermelon-powder.jpg"
-  },
-  {
-    name: "Organic Milk Thistle Extract Powder",
-    slug: "organic-milk-thistle-extract",
-    description: "USDA organic certified milk thistle extract, 80% silymarin, suitable for organic products.",
-    image: "/images/products/organic-milk-thistle-extract.jpg"
-  },
-  {
-    name: "High Quality Organic Ginkgo Biloba Extract Powder",
-    slug: "ginkgo-biloba-extract",
-    description: "24% flavone glycosides, 6% terpene lactones, supports cognitive function and blood circulation.",
-    image: "/images/products/ginkgo-biloba-extract.jpg"
-  },
-  {
-    name: "Pure Natural Organic Sea Buckthorn Powder",
-    slug: "sea-buckthorn-powder",
-    description: "Rich in vitamin C and omega 7, suitable for health supplements and cosmetic products.",
-    image: "/images/products/sea-buckthorn-powder.jpg"
-  },
-  {
-    name: "Organic Wheat Grass Powder for Food and Beverage",
-    slug: "wheat-grass-powder",
-    description: "USDA organic certified wheat grass powder, rich in chlorophyll and nutrients.",
-    image: "/images/products/wheat-grass-powder.jpg"
-  }
-];
+const products = productData.products.filter(p => p.category === '植物提取物');
 ---
 
 <Layout 
@@ -104,6 +14,7 @@ const products = [
     <div class="container mx-auto px-6">
       <h1 class="text-[clamp(2rem,4vw,3rem)] font-bold mb-4">Plant Extracts</h1>
       <p class="text-green-100 max-w-3xl text-lg">We offer a wide range of high-quality natural plant extracts with 10-98% active ingredient content, all certified by FDA, REACH, GMP. Suitable for cosmetics, health supplements, food and beverage industries.</p>
+      <p class="text-green-200 mt-2 font-medium">Total products: {products.length}</p>
     </div>
   </section>
 
@@ -118,7 +29,7 @@ const products = [
                 src={product.image} 
                 alt={product.name} 
                 class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-                onError={(e) => e.target.src = 'https://images.unsplash.com/photo-1616628188859-7a11abb6fcc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'}
+                onError={(e) => e.target.src = 'https://placehold.co/600x400/ffffff/1e40af?text=WEIYIJIE+Product'}
               />
             </div>
             <div class="p-6">

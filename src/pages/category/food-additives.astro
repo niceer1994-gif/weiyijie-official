@@ -1,57 +1,24 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import productData from '../../data/products.json';
 
-const products = [
-  {
-    name: "Natural Vitamin C 99%",
-    slug: "natural-vitamin-c",
-    description: "High purity natural vitamin C, antioxidant, suitable for food and beverage products.",
-    image: "/images/products/vitamin-c.jpg"
-  },
-  {
-    name: "Stevia Extract 97% Steviosides",
-    slug: "stevia-extract",
-    description: "Natural zero-calorie sweetener, 97% steviosides, suitable for sugar-free food and beverages.",
-    image: "/images/products/stevia-extract.jpg"
-  },
-  {
-    name: "Xanthan Gum Food Grade",
-    slug: "xanthan-gum",
-    description: "Natural thickener and stabilizer, suitable for sauces, beverages, bakery products.",
-    image: "/images/products/xanthan-gum.jpg"
-  },
-  {
-    name: "Citric Acid Monohydrate",
-    slug: "citric-acid",
-    description: "Acidulant and preservative, widely used in beverages, candies, and food processing.",
-    image: "/images/products/citric-acid.jpg"
-  },
-  {
-    name: "Natural Beta-Carotene 10%",
-    slug: "beta-carotene",
-    description: "Natural colorant and nutritional supplement, suitable for food, beverage and health products.",
-    image: "/images/products/beta-carotene.jpg"
-  },
-  {
-    name: "Sodium Erythorbate",
-    slug: "sodium-erythorbate",
-    description: "Food antioxidant, prevents discoloration and flavor deterioration, extends shelf life.",
-    image: "/images/products/sodium-erythorbate.jpg"
-  }
-];
+const products = productData.products.filter(p => p.category === '食品添加剂');
 ---
 
 <Layout 
-  title="Food Additives - Weiyijie Bio | Wholesale Natural Food Additives Supplier"
-  description="Premium natural food additives wholesale supplier. We offer high quality food grade ingredients, all meet FDA and GB standards, small MOQ supported, fast delivery."
+  title="Food Additives - Weiyijie Bio | Wholesale Food Ingredients Supplier"
+  description="Natural food additives wholesale supplier. We offer high quality food preservatives, flavor enhancers, nutritional fortifiers that meet international food safety standards. Small MOQ supported."
 >
+  <!-- 页面头部 -->
   <section class="py-12 bg-gradient-to-r from-amber-900 to-amber-800 text-white">
     <div class="container mx-auto px-6">
       <h1 class="text-[clamp(2rem,4vw,3rem)] font-bold mb-4">Food Additives</h1>
-      <p class="text-amber-100 max-w-3xl text-lg">We supply natural food grade additives including sweeteners, thickeners, acidulants, colorants and antioxidants. All products meet international food safety standards, with complete certification documents.</p>
+      <p class="text-amber-100 max-w-3xl text-lg">We supply a wide range of natural food additives, including nutritional fortifiers, preservatives, flavor enhancers, colorants, etc. All products are food grade, meet FDA and GMP standards, safe and reliable.</p>
+      <p class="text-amber-200 mt-2 font-medium">Total products: {products.length}</p>
     </div>
   </section>
 
+  <!-- 产品列表 -->
   <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -62,14 +29,14 @@ const products = [
                 src={product.image} 
                 alt={product.name} 
                 class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-                onError={(e) => e.target.src = 'https://images.unsplash.com/photo-1542281286-9e0a16bb7366?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'}
+                onError={(e) => e.target.src = 'https://placehold.co/600x400/ffffff/92400e?text=WEIYIJIE+Product'}
               />
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-gray-900 mb-2 line-clamp-2">{product.name}</h3>
               <p class="text-gray-600 mb-4 line-clamp-3">{product.description}</p>
               <div class="flex justify-between items-center">
-                <span class="text-amber-600 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
+                <span class="text-amber-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
                 <span class="text-sm bg-amber-100 text-amber-800 px-3 py-1 rounded-full">In Stock</span>
               </div>
             </div>
@@ -79,11 +46,12 @@ const products = [
     </div>
   </section>
 
+  <!-- 咨询板块 -->
   <section class="py-12 bg-amber-50">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">Need Custom Food Additives or Special Specifications?</h2>
-      <p class="text-gray-600 mb-8 max-w-2xl mx-auto">We support custom purity, packaging and formula development according to your food production needs. Contact us today to get a free quote.</p>
-      <a href="/#contact" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-8 py-3 rounded-lg inline-block transition-all">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Need Custom Food Additives or Bulk Purchase?</h2>
+      <p class="text-gray-600 mb-8 max-w-2xl mx-auto">We support custom specifications and bulk purchase discounts. Contact us today to get a free quote and sample.</p>
+      <a href="/#contact" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg inline-block transition-all">
         Request Custom Quote
       </a>
     </div>
