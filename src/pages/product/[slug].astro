@@ -1,774 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-
-// 全量产品数据
-const products = {
-  "grape-seed-extract-95-proanthocyanidins": {
-    name: "High Quality Grape Seed Extract 95% Proanthocyanidins",
-    description: "Our grape seed extract is derived from premium grape seeds, containing 95% proanthocyanidins (OPCs) which are powerful natural antioxidants. It is widely used in cosmetics, health supplements and functional food products.",
-    specifications: {
-      "Active Ingredient": "95% Proanthocyanidins (OPCs)",
-      "Appearance": "Reddish brown fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet USP standards"
-    },
-    applications: [
-      "Cosmetics: Anti-aging, whitening, anti-oxidation products",
-      "Health supplements: Cardiovascular health, immune support products",
-      "Functional food: Beverages, health bars, dietary supplements"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/grape-seed-extract.jpg"
-  },
-  "organic-astragalus-root-extract": {
-    name: "Factory Bulk Organic Astragalus Root Extract",
-    description: "100% organic astragalus root extract, supports immune system function, suitable for health products.",
-    specifications: {
-      "Active Ingredient": "10-70% Polysaccharides",
-      "Appearance": "Brown fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet USP standards"
-    },
-    applications: [
-      "Health supplements: Immune support products",
-      "Functional food: Teas, health bars, dietary supplements",
-      "Cosmetics: Anti-aging products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Organic", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/astragalus-root-extract.jpg"
-  },
-  "milk-thistle-extract-powder": {
-    name: "Natural Plant Milk Thistle Extract Powder",
-    description: "80% silymarin content, liver protection function, food grade and cosmetic grade available.",
-    specifications: {
-      "Active Ingredient": "80% Silymarin",
-      "Appearance": "Light yellow fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet USP standards"
-    },
-    applications: [
-      "Health supplements: Liver protection products",
-      "Functional food: Beverages, capsules, tablets",
-      "Cosmetics: Anti-oxidation products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/milk-thistle-extract.jpg"
-  },
-  "pure-shilajit-extract": {
-    name: "High Quality Bulk Pure Shilajit Extract",
-    description: "Pure natural shilajit extract with high fulvic acid content, supports energy and immunity.",
-    specifications: {
-      "Active Ingredient": "50% Fulvic Acid",
-      "Appearance": "Black powder / resin",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤10%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet USP standards"
-    },
-    applications: [
-      "Health supplements: Energy support, immune support products",
-      "Functional food: Capsules, powders, energy drinks"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/shilajit-extract.jpg"
-  },
-  "ginseng-extract": {
-    name: "Food-Grade Ginseng Extract",
-    description: "10-80% ginsenosides content, suitable for health supplements and functional food.",
-    specifications: {
-      "Active Ingredient": "10-80% Ginsenosides",
-      "Appearance": "Light yellow fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet USP standards"
-    },
-    applications: [
-      "Health supplements: Energy support, cognitive function products",
-      "Functional food: Beverages, capsules, tablets",
-      "Cosmetics: Anti-aging products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/ginseng-extract.jpg"
-  },
-  "natural-grapefruit-powder": {
-    name: "100% Water Soluble Natural Grapefruit Powder",
-    description: "Spray dried grapefruit powder, no additives, suitable for beverages and food products.",
-    specifications: {
-      "Active Ingredient": "100% Natural Grapefruit Powder",
-      "Appearance": "Light pink fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤3%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Beverages: Juices, smoothies, energy drinks",
-      "Food: Confectionery, bakery, dairy products",
-      "Cosmetics: Skincare products, masks"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/grapefruit-powder.jpg"
-  },
-  "cranberry-fruit-powder": {
-    name: "Pure Natural Cranberry Fruit Powder",
-    description: "Freeze dried cranberry powder, high PAC content, supports urinary tract health.",
-    specifications: {
-      "Active Ingredient": "100% Natural Cranberry Powder, 25% PAC",
-      "Appearance": "Dark pink fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤3%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Health supplements: Urinary tract health products",
-      "Beverages: Juices, smoothies, functional drinks",
-      "Food: Confectionery, bakery products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/cranberry-powder.jpg"
-  },
-  "mango-fruit-powder": {
-    name: "Mango Fruit Powder for Dietary Supplements",
-    description: "Natural mango fruit powder, rich in vitamins, suitable for food and cosmetic products.",
-    specifications: {
-      "Active Ingredient": "100% Natural Mango Powder",
-      "Appearance": "Yellow fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤3%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Beverages: Juices, smoothies, milkshakes",
-      "Food: Confectionery, bakery, ice cream",
-      "Cosmetics: Skincare products, masks"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/mango-powder.jpg"
-  },
-  "non-irradiated-mango-powder": {
-    name: "Non-Irradiated Pure Mango Powder for Dietary Supplements",
-    description: "Non-irradiated, 100% natural mango powder, no preservatives, food grade.",
-    specifications: {
-      "Active Ingredient": "100% Natural Non-Irradiated Mango Powder",
-      "Appearance": "Yellow fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤3%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Beverages: Juices, smoothies, organic drinks",
-      "Food: Confectionery, bakery, organic food products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Organic", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/non-irradiated-mango-powder.jpg"
-  },
-  "strawberry-powder": {
-    name: "Pure Natural Bulk Strawberry Powder",
-    description: "Freeze dried strawberry powder, natural flavor and color, suitable for food and cosmetics.",
-    specifications: {
-      "Active Ingredient": "100% Natural Strawberry Powder",
-      "Appearance": "Red fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤3%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Beverages: Juices, smoothies, milkshakes",
-      "Food: Confectionery, bakery, ice cream",
-      "Cosmetics: Skincare products, masks, lip products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/strawberry-powder.jpg"
-  },
-  "watermelon-powder": {
-    name: "Pure Natural Watermelon Powder for Beverage",
-    description: "Spray dried watermelon powder, 100% natural, no additives, perfect for beverage products.",
-    specifications: {
-      "Active Ingredient": "100% Natural Watermelon Powder",
-      "Appearance": "Light red fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤3%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Beverages: Juices, smoothies, energy drinks",
-      "Food: Confectionery, bakery, ice cream"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/watermelon-powder.jpg"
-  },
-  "organic-milk-thistle-extract": {
-    name: "Organic Milk Thistle Extract Powder",
-    description: "USDA organic certified milk thistle extract, 80% silymarin, suitable for organic products.",
-    specifications: {
-      "Active Ingredient": "80% Silymarin",
-      "Appearance": "Light yellow fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet USP standards"
-    },
-    applications: [
-      "Health supplements: Liver protection products",
-      "Functional food: Organic capsules, tablets, powders"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Organic", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/organic-milk-thistle-extract.jpg"
-  },
-  "ginkgo-biloba-extract": {
-    name: "High Quality Organic Ginkgo Biloba Extract Powder",
-    description: "24% flavone glycosides, 6% terpene lactones, supports cognitive function and blood circulation.",
-    specifications: {
-      "Active Ingredient": "24% Flavone Glycosides, 6% Terpene Lactones",
-      "Appearance": "Light brown fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet USP standards"
-    },
-    applications: [
-      "Health supplements: Cognitive function, blood circulation support products",
-      "Functional food: Capsules, tablets, beverages"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/ginkgo-biloba-extract.jpg"
-  },
-  "sea-buckthorn-powder": {
-    name: "Pure Natural Organic Sea Buckthorn Powder",
-    description: "Rich in vitamin C and omega 7, suitable for health supplements and cosmetic products.",
-    specifications: {
-      "Active Ingredient": "100% Natural Sea Buckthorn Powder",
-      "Appearance": "Orange fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤3%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Health supplements: Immune support, digestive health products",
-      "Beverages: Juices, smoothies, functional drinks",
-      "Cosmetics: Skincare products, hair care products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Organic", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/sea-buckthorn-powder.jpg"
-  },
-  "wheat-grass-powder": {
-    name: "Organic Wheat Grass Powder for Food and Beverage",
-    description: "USDA organic certified wheat grass powder, rich in chlorophyll and nutrients.",
-    specifications: {
-      "Active Ingredient": "100% Organic Wheat Grass Powder",
-      "Appearance": "Green fine powder",
-      "Particle Size": "100% pass 80 mesh",
-      "Loss on Drying": "≤5%",
-      "Ash Content": "≤8%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Health supplements: Detox, immune support products",
-      "Beverages: Green juices, smoothies, health drinks",
-      "Food: Superfood blends, bakery products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Organic", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/wheat-grass-powder.jpg"
-  },
-  // 化妆品原料
-  "hyaluronic-acid-powder": {
-    name: "Hyaluronic Acid Powder 99%",
-    description: "High molecular weight hyaluronic acid, 99% purity, excellent moisturizing effect for skincare products.",
-    specifications: {
-      "Purity": "99%",
-      "Molecular Weight": "1M-2M Da",
-      "Appearance": "White fine powder",
-      "Loss on Drying": "≤5%",
-      "pH": "5.0-7.5",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet cosmetic grade standards"
-    },
-    applications: [
-      "Skincare: Moisturizing creams, serums, masks, lotions",
-      "Cosmetics: Lipsticks, foundations, eye products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/hyaluronic-acid.jpg"
-  },
-  "kojic-acid-dipalmitate": {
-    name: "Kojic Acid Dipalmitate 99%",
-    description: "Skin whitening agent, 99% purity, stable and non-irritating, suitable for whitening creams and serums.",
-    specifications: {
-      "Purity": "99%",
-      "Appearance": "White crystalline powder",
-      "Melting Point": "92-96°C",
-      "Loss on Drying": "≤0.5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet cosmetic grade standards"
-    },
-    applications: [
-      "Skincare: Whitening creams, serums, masks, spot removal products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/kojic-acid.jpg"
-  },
-  "alpha-arbutin": {
-    name: "Alpha Arbutin 99.5%",
-    description: "Natural skin whitening ingredient, inhibits melanin production, suitable for all skin types.",
-    specifications: {
-      "Purity": "99.5%",
-      "Appearance": "White crystalline powder",
-      "Melting Point": "199-201°C",
-      "Loss on Drying": "≤0.5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet cosmetic grade standards"
-    },
-    applications: [
-      "Skincare: Whitening creams, serums, masks, spot removal products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/alpha-arbutin.jpg"
-  },
-  "retinol": {
-    name: "Retinol (Vitamin A)",
-    description: "Anti-aging ingredient, promotes collagen production, reduces fine lines and wrinkles.",
-    specifications: {
-      "Purity": "98%",
-      "Appearance": "Yellow crystalline powder",
-      "Melting Point": "62-64°C",
-      "Loss on Drying": "≤0.5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet cosmetic grade standards"
-    },
-    applications: [
-      "Skincare: Anti-aging creams, serums, eye products, anti-wrinkle products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag, light-proof)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight, sealed. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/retinol.jpg"
-  },
-  "niacinamide": {
-    name: "Niacinamide (Vitamin B3) 99%",
-    description: "Multi-functional skincare ingredient, brightens skin tone, reduces pores, strengthens skin barrier.",
-    specifications: {
-      "Purity": "99%",
-      "Appearance": "White crystalline powder",
-      "Melting Point": "128-131°C",
-      "Loss on Drying": "≤0.5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet cosmetic grade standards"
-    },
-    applications: [
-      "Skincare: Brightening creams, serums, pore reducing products, barrier repair products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/niacinamide.jpg"
-  },
-  "ceramide-complex": {
-    name: "Ceramide Complex",
-    description: "Repairs skin barrier, locks in moisture, suitable for sensitive and dry skin products.",
-    specifications: {
-      "Purity": "98%",
-      "Appearance": "White to off-white powder",
-      "Loss on Drying": "≤1%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet cosmetic grade standards"
-    },
-    applications: [
-      "Skincare: Barrier repair creams, serums, moisturizers, sensitive skin products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/ceramide.jpg"
-  },
-  // 食品添加剂
-  "natural-vitamin-c": {
-    name: "Natural Vitamin C 99%",
-    description: "High purity natural vitamin C, antioxidant, suitable for food and beverage products.",
-    specifications: {
-      "Purity": "99%",
-      "Appearance": "White crystalline powder",
-      "Melting Point": "190-192°C",
-      "Loss on Drying": "≤0.5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Beverages: Juices, energy drinks, vitamin drinks",
-      "Food: Confectionery, bakery, dairy products",
-      "Health supplements: Vitamin C tablets, capsules, powders"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/vitamin-c.jpg"
-  },
-  "stevia-extract": {
-    name: "Stevia Extract 97% Steviosides",
-    description: "Natural zero-calorie sweetener, 97% steviosides, suitable for sugar-free food and beverages.",
-    specifications: {
-      "Active Ingredient": "97% Steviosides",
-      "Appearance": "White fine powder",
-      "Sweetness": "200-300 times of sucrose",
-      "Loss on Drying": "≤5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Beverages: Sugar-free drinks, juices, teas",
-      "Food: Confectionery, bakery, dairy products, table sweeteners",
-      "Health supplements: Sugar-free products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/stevia-extract.jpg"
-  },
-  "xanthan-gum": {
-    name: "Xanthan Gum Food Grade",
-    description: "Natural thickener and stabilizer, suitable for sauces, beverages, bakery products.",
-    specifications: {
-      "Purity": "99%",
-      "Appearance": "White to off-white powder",
-      "Gel Strength": "≥1200g/cm²",
-      "Loss on Drying": "≤13%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Food: Sauces, dressings, beverages, bakery products, dairy products",
-      "Cosmetics: Creams, lotions, hair care products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/xanthan-gum.jpg"
-  },
-  "citric-acid": {
-    name: "Citric Acid Monohydrate",
-    description: "Acidulant and preservative, widely used in beverages, candies, and food processing.",
-    specifications: {
-      "Purity": "99.5%",
-      "Appearance": "Colorless crystalline granules",
-      "Melting Point": "153°C",
-      "Loss on Drying": "8.5-10.0%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Beverages: Soft drinks, juices, energy drinks",
-      "Food: Confectionery, bakery, processed foods, preserves",
-      "Cosmetics: pH adjusters, hair care products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/bag (woven bag, inner plastic bag)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/citric-acid.jpg"
-  },
-  "beta-carotene": {
-    name: "Natural Beta-Carotene 10%",
-    description: "Natural colorant and nutritional supplement, suitable for food, beverage and health products.",
-    specifications: {
-      "Active Ingredient": "10% Beta-Carotene",
-      "Appearance": "Red to orange fine powder",
-      "Loss on Drying": "≤5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Food: Colorant for beverages, bakery, dairy products, confectionery",
-      "Health supplements: Vitamin A supplements, antioxidant products"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag, light-proof)",
-      "25kg/drum (fiber drum, double plastic bag inside)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight, sealed. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/beta-carotene.jpg"
-  },
-  "sodium-erythorbate": {
-    name: "Sodium Erythorbate",
-    description: "Food antioxidant, prevents discoloration and flavor deterioration, extends shelf life.",
-    specifications: {
-      "Purity": "99%",
-      "Appearance": "White crystalline powder",
-      "Melting Point": "164-172°C",
-      "Loss on Drying": "≤0.5%",
-      "Heavy Metals": "≤10ppm",
-      "Microbial Limit": "Meet food grade standards"
-    },
-    applications: [
-      "Food: Preservative for processed meats, beverages, baked goods, frozen foods",
-      "Beverages: Prevents oxidation and browning in juices, soft drinks"
-    ],
-    packaging: [
-      "1kg/bag (aluminum foil bag)",
-      "25kg/bag (woven bag, inner plastic bag)",
-      "Custom packaging available upon request"
-    ],
-    storage: "Store in cool, dry place, away from direct sunlight. Shelf life: 2 years when properly stored.",
-    certifications: ["FDA", "REACH", "GMP", "Kosher", "Halal"],
-    moq: "1kg",
-    leadTime: "3-5 days after payment confirmation",
-    image: "/images/products/sodium-erythorbate.jpg"
-  }
-};
+import productData from '../../data/products.json';
 
 // 静态生成所有产品页面
 export async function getStaticPaths() {
-  const slugs = [
-    "grape-seed-extract-95-proanthocyanidins",
-    "organic-astragalus-root-extract",
-    "milk-thistle-extract-powder",
-    "pure-shilajit-extract",
-    "ginseng-extract",
-    "natural-grapefruit-powder",
-    "cranberry-fruit-powder",
-    "mango-fruit-powder",
-    "non-irradiated-mango-powder",
-    "strawberry-powder",
-    "watermelon-powder",
-    "organic-milk-thistle-extract",
-    "ginkgo-biloba-extract",
-    "sea-buckthorn-powder",
-    "wheat-grass-powder",
-    "hyaluronic-acid-powder",
-    "kojic-acid-dipalmitate",
-    "alpha-arbutin",
-    "retinol",
-    "niacinamide",
-    "ceramide-complex",
-    "natural-vitamin-c",
-    "stevia-extract",
-    "xanthan-gum",
-    "citric-acid",
-    "beta-carotene",
-    "sodium-erythorbate"
-  ];
-  return slugs.map(slug => ({
-    params: { slug }
+  return productData.products.map(product => ({
+    params: { slug: product.slug }
   }));
 }
 
 const { slug } = Astro.params;
-const product = products[slug] || null;
+const product = productData.products.find(p => p.slug === slug) || null;
 
 if (!product) {
   return Astro.redirect('/404');
@@ -789,7 +31,7 @@ if (!product) {
               src={product.image} 
               alt={product.name} 
               class="w-full h-[400px] object-cover"
-              onError={(e) => e.target.src = 'https://images.unsplash.com/photo-1616628188859-7a11abb6fcc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'}
+              onError={(e) => e.target.src = 'https://placehold.co/600x400/f8fafc/1e40af?text=WEIYIJIE+BIO+Product'}
             />
           </div>
         </div>
@@ -804,11 +46,11 @@ if (!product) {
           <div class="grid grid-cols-2 gap-4 mb-8">
             <div class="bg-gray-100 rounded-lg p-4">
               <p class="text-sm text-gray-500 mb-1">MOQ</p>
-              <p class="font-bold text-gray-900">{product.moq}</p>
+              <p class="font-bold text-gray-900">1kg</p>
             </div>
             <div class="bg-gray-100 rounded-lg p-4">
               <p class="text-sm text-gray-500 mb-1">Lead Time</p>
-              <p class="font-bold text-gray-900">{product.leadTime}</p>
+              <p class="font-bold text-gray-900">3-5 days</p>
             </div>
             <div class="bg-gray-100 rounded-lg p-4">
               <p class="text-sm text-gray-500 mb-1">Shelf Life</p>
@@ -816,7 +58,7 @@ if (!product) {
             </div>
             <div class="bg-gray-100 rounded-lg p-4">
               <p class="text-sm text-gray-500 mb-1">Certifications</p>
-              <p class="font-bold text-gray-900">Cooperative factory certificates available<br>(FDA/REACH/GMP/Kosher/Halal)</p>
+              <p class="font-bold text-gray-900">FDA/REACH/GMP/Kosher/Halal</p>
             </div>
           </div>
           <div class="flex flex-wrap gap-4">
@@ -847,32 +89,98 @@ if (!product) {
         <div>
           <h3 class="text-xl font-bold text-gray-900 mb-4">Technical Specifications</h3>
           <table class="w-full">
-            {Object.entries(product.specifications).map(([key, value]) => (
-              <tr class="border-b border-gray-200">
-                <td class="py-3 font-medium text-gray-900">{key}</td>
-                <td class="py-3 text-gray-600">{value}</td>
-              </tr>
-            ))}
+            <tr class="border-b border-gray-200">
+              <td class="py-3 font-medium text-gray-900">Specifications</td>
+              <td class="py-3 text-gray-600">{product.specifications.join(', ')}</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-3 font-medium text-gray-900">Purity</td>
+              <td class="py-3 text-gray-600">High purity, meets international standards</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-3 font-medium text-gray-900">Appearance</td>
+              <td class="py-3 text-gray-600">Fine powder</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-3 font-medium text-gray-900">Loss on Drying</td>
+              <td class="py-3 text-gray-600">≤5%</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-3 font-medium text-gray-900">Heavy Metals</td>
+              <td class="py-3 text-gray-600">≤10ppm</td>
+            </tr>
+            <tr class="border-b border-gray-200">
+              <td class="py-3 font-medium text-gray-900">Microbial Limit</td>
+              <td class="py-3 text-gray-600">Meet international standards</td>
+            </tr>
           </table>
         </div>
         <div>
           <h3 class="text-xl font-bold text-gray-900 mb-4">Applications</h3>
           <ul class="space-y-3">
-            {product.applications.map(app => (
-              <li class="flex items-start gap-3">
-                <span class="text-green-500 mt-1">✅</span>
-                <span class="text-gray-600">{app}</span>
-              </li>
-            ))}
+            {product.category === '植物提取物' && (
+              <>
+                <li class="flex items-start gap-3">
+                  <span class="text-green-500 mt-1">✅</span>
+                  <span class="text-gray-600">Health supplements: Immune support, antioxidant products</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-green-500 mt-1">✅</span>
+                  <span class="text-gray-600">Cosmetics: Skincare formulations, anti-aging products</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-green-500 mt-1">✅</span>
+                  <span class="text-gray-600">Functional food: Beverages, dietary supplements</span>
+                </li>
+              </>
+            )}
+            {product.category === '化妆品原料' && (
+              <>
+                <li class="flex items-start gap-3">
+                  <span class="text-green-500 mt-1">✅</span>
+                  <span class="text-gray-600">Skincare: Creams, serums, masks, lotions</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-green-500 mt-1">✅</span>
+                  <span class="text-gray-600">Cosmetics: Makeup, hair care, personal care products</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-green-500 mt-1">✅</span>
+                  <span class="text-gray-600">Meets all global cosmetic regulatory requirements</span>
+                </li>
+              </>
+            )}
+            {product.category === '食品添加剂' && (
+              <>
+                <li class="flex items-start gap-3">
+                  <span class="text-green-500 mt-1">✅</span>
+                  <span class="text-gray-600">Food & Beverages: Juices, drinks, bakery products</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-green-500 mt-1">✅</span>
+                  <span class="text-gray-600">Health supplements: Nutritional fortifiers, capsules, tablets</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-green-500 mt-1">✅</span>
+                  <span class="text-gray-600">Meets international food safety standards</span>
+                </li>
+              </>
+            )}
           </ul>
           <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Packaging Options</h3>
           <ul class="space-y-3">
-            {product.packaging.map(pack => (
-              <li class="flex items-start gap-3">
-                <span class="text-green-500 mt-1">📦</span>
-                <span class="text-gray-600">{pack}</span>
-              </li>
-            ))}
+            <li class="flex items-start gap-3">
+              <span class="text-green-500 mt-1">📦</span>
+              <span class="text-gray-600">1kg/bag (aluminum foil bag)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-green-500 mt-1">📦</span>
+              <span class="text-gray-600">25kg/drum (fiber drum, double plastic bag inside)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-green-500 mt-1">📦</span>
+              <span class="text-gray-600">Custom packaging available upon request</span>
+            </li>
           </ul>
           <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Certifications</h3>
           <p class="text-gray-600 mb-4">We can provide the following certification documents from our cooperative factories:</p>
@@ -891,52 +199,26 @@ if (!product) {
     <div class="container mx-auto px-6">
       <h2 class="text-2xl font-bold text-gray-900 mb-8">Related Products You May Be Interested In</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- 相关产品占位，后续可动态加载 -->
-        <a href="/product/milk-thistle-extract-powder" class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all group overflow-hidden">
-          <div class="h-48 overflow-hidden">
-            <img 
-              src="/images/products/milk-thistle-extract.jpg" 
-              alt="Milk Thistle Extract Powder" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-              onError={(e) => e.target.src = 'https://images.unsplash.com/photo-1616628188859-7a11abb6fcc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'}
-            />
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-gray-900 mb-2">Natural Plant Milk Thistle Extract Powder</h3>
-            <p class="text-gray-600 mb-4 line-clamp-2">80% silymarin content, liver protection function, food grade and cosmetic grade available.</p>
-            <span class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
-          </div>
-        </a>
-        <a href="/product/ginseng-extract" class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all group overflow-hidden">
-          <div class="h-48 overflow-hidden">
-            <img 
-              src="/images/products/ginseng-extract.jpg" 
-              alt="Food-Grade Ginseng Extract" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-              onError={(e) => e.target.src = 'https://images.unsplash.com/photo-1616628188859-7a11abb6fcc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'}
-            />
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-gray-900 mb-2">Food-Grade Ginseng Extract</h3>
-            <p class="text-gray-600 mb-4 line-clamp-2">10-80% ginsenosides content, suitable for health supplements and functional food.</p>
-            <span class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
-          </div>
-        </a>
-        <a href="/product/ginkgo-biloba-extract" class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all group overflow-hidden">
-          <div class="h-48 overflow-hidden">
-            <img 
-              src="/images/products/ginkgo-biloba-extract.jpg" 
-              alt="High Quality Organic Ginkgo Biloba Extract Powder" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-              onError={(e) => e.target.src = 'https://images.unsplash.com/photo-1616628188859-7a11abb6fcc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'}
-            />
-          </div>
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-gray-900 mb-2">Organic Ginkgo Biloba Extract Powder</h3>
-            <p class="text-gray-600 mb-4 line-clamp-2">24% flavone glycosides, 6% terpene lactones, supports cognitive function and blood circulation.</p>
-            <span class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
-          </div>
-        </a>
+        {productData.products
+          .filter(p => p.category === product.category && p.id !== product.id)
+          .slice(0, 3)
+          .map(relatedProduct => (
+            <a href={`/product/${relatedProduct.slug}`} class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all group overflow-hidden">
+              <div class="h-48 overflow-hidden">
+                <img 
+                  src={relatedProduct.image} 
+                  alt={relatedProduct.name} 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+                  onError={(e) => e.target.src = 'https://placehold.co/600x400/f8fafc/1e40af?text=WEIYIJIE+BIO+Product'}
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2">{relatedProduct.name}</h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">{relatedProduct.description}</p>
+                <span class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
+              </div>
+            </a>
+          ))}
       </div>
     </div>
   </section>
