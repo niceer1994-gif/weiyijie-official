@@ -2591,6 +2591,60 @@
         "REACH",
         "GMP"
       ]
+    },
+    {
+      "id": 145,
+      "name": "High Quality Grape Seed Extract 95% Proanthocya...",
+      "slug": "high-quality-grape-seed-extract-95-proanthocya",
+      "category": "植物提取物",
+      "description": "Product Name: Grape Seed ExtractPlant Part: SeedAppearance: Reddish Brown PowderActive ingredient: ProanthocyanidinsSpeification: 10:1,95%Test Method: TLC/UVApplication: Health Food, Functional FoodsCertificates: ISO9001/ISO22000/Kosher/Halal/HACCP",
+      "specifications": [
+        "1kg/bag",
+        "25kg/drum"
+      ],
+      "applications": [],
+      "image": "https://placehold.co/600x400/f8fafc/1e40af?text=WEIYIJIE+BIO+High%2BQuality",
+      "certifications": [
+        "FDA",
+        "REACH",
+        "GMP"
+      ]
+    },
+    {
+      "id": 146,
+      "name": "Wholesale Price Natural Plant Milk Thistle Extr...",
+      "slug": "wholesale-price-natural-plant-milk-thistle-extr",
+      "category": "植物提取物",
+      "description": "Product Name: Milk Thistle ExtractAppearance: Brown Yellow Fine PowderPlant Part: SeedActive Ingredient: SilymarinSpecification: 80%Test Methods: UVCertificates: Halal, Kosher, FSSC 22000, ISO 22000 and CGMPGrade: Food Grade",
+      "specifications": [
+        "1kg/bag",
+        "25kg/drum"
+      ],
+      "applications": [],
+      "image": "https://placehold.co/600x400/f8fafc/1e40af?text=WEIYIJIE+BIO+Wholesale%2BPrice",
+      "certifications": [
+        "FDA",
+        "REACH",
+        "GMP"
+      ]
+    },
+    {
+      "id": 147,
+      "name": "High Quality Food-Grade Ginseng Extract For Hea...",
+      "slug": "high-quality-food-grade-ginseng-extract-for-hea",
+      "category": "食品添加剂",
+      "description": "Product Name: Ginseng ExtractPlant Part: RootAppearance: Light Yellow PowderActive ingredient: GinsenosidesSpeification: 10:1,1-80%Test Method: TLC/HPLCApplication: Health Food, Functional FoodsCertificates: ISO9001/ISO22000/Kosher/Halal/HACCP",
+      "specifications": [
+        "1kg/bag",
+        "25kg/drum"
+      ],
+      "applications": [],
+      "image": "https://placehold.co/600x400/f8fafc/92400e?text=WEIYIJIE+BIO+High%2BQuality",
+      "certifications": [
+        "FDA",
+        "REACH",
+        "GMP"
+      ]
     }
   ]
 }
