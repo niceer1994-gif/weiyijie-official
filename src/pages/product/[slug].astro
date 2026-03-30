@@ -78,112 +78,186 @@ if (!product) {
   <section class="py-16 bg-white">
     <div class="container mx-auto px-6 max-w-5xl">
       <div class="border-b border-gray-200 mb-8">
-        <nav class="flex gap-8">
-          <button class="font-bold text-green-500 border-b-2 border-green-500 pb-4">Specifications</button>
-          <button class="font-medium text-gray-500 hover:text-gray-900 pb-4">Applications</button>
-          <button class="font-medium text-gray-500 hover:text-gray-900 pb-4">Packaging & Storage</button>
-          <button class="font-medium text-gray-500 hover:text-gray-900 pb-4">Certifications</button>
+        <nav class="flex gap-8" id="productTabs">
+          <button class="tab-btn font-bold text-green-500 border-b-2 border-green-500 pb-4" data-tab="specifications">Specifications</button>
+          <button class="tab-btn font-medium text-gray-500 hover:text-gray-900 pb-4" data-tab="applications">Applications</button>
+          <button class="tab-btn font-medium text-gray-500 hover:text-gray-900 pb-4" data-tab="packaging">Packaging & Storage</button>
+          <button class="tab-btn font-medium text-gray-500 hover:text-gray-900 pb-4" data-tab="certifications">Certifications</button>
         </nav>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Technical Specifications</h3>
-          <table class="w-full">
-            {product.specifications.map((spec, index) => {
-              // 拆分规格项为键值对
-              const parts = spec.split(/:|：|-|–/).map(s => s.trim());
-              const key = parts[0] || `Specification ${index + 1}`;
-              const value = parts.slice(1).join(': ') || spec;
-              return (
-                <tr class="border-b border-gray-200">
-                  <td class="py-3 font-medium text-gray-900">{key}</td>
-                  <td class="py-3 text-gray-600">{value}</td>
-                </tr>
-              );
-            })}
-          </table>
+
+      <!-- 标签内容块 -->
+      <div class="tab-content" id="specifications-content">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Technical Specifications</h3>
+            <table class="w-full">
+              {product.specifications.map((spec, index) => {
+                // 拆分规格项为键值对
+                const parts = spec.split(/:|：|-|–/).map(s => s.trim());
+                const key = parts[0] || `Specification ${index + 1}`;
+                const value = parts.slice(1).join(': ') || spec;
+                return (
+                  <tr class="border-b border-gray-200">
+                    <td class="py-3 font-medium text-gray-900">{key}</td>
+                    <td class="py-3 text-gray-600">{value}</td>
+                  </tr>
+                );
+              })}
+            </table>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Parameter Notes</h3>
+            <p class="text-gray-600">All parameters are tested and verified by our quality control team, meet international standards. Custom specifications are available upon request.</p>
+          </div>
         </div>
-        <div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Applications</h3>
-          <ul class="space-y-3">
+      </div>
+
+      <div class="tab-content hidden" id="applications-content">
+        <div class="max-w-3xl">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Application Scenarios</h3>
+          <ul class="space-y-4">
             {product.applications && product.applications.length > 0 ? (
               product.applications.map(app => (
-                <li class="flex items-start gap-3">
-                  <span class="text-green-500 mt-1">✅</span>
-                  <span class="text-gray-600">{app}</span>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-green-500 mt-1 text-xl">✅</span>
+                  <span class="text-gray-700">{app}</span>
                 </li>
               ))
             ) : product.category === '植物提取物' ? (
               <>
-                <li class="flex items-start gap-3">
-                  <span class="text-green-500 mt-1">✅</span>
-                  <span class="text-gray-600">Health supplements: Immune support, antioxidant products</span>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-green-500 mt-1 text-xl">✅</span>
+                  <span class="text-gray-700">Health supplements: Immune support, antioxidant products</span>
                 </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-green-500 mt-1">✅</span>
-                  <span class="text-gray-600">Cosmetics: Skincare formulations, anti-aging products</span>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-green-500 mt-1 text-xl">✅</span>
+                  <span class="text-gray-700">Cosmetics: Skincare formulations, anti-aging products</span>
                 </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-green-500 mt-1">✅</span>
-                  <span class="text-gray-600">Functional food: Beverages, dietary supplements</span>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-green-500 mt-1 text-xl">✅</span>
+                  <span class="text-gray-700">Functional food: Beverages, dietary supplements</span>
                 </li>
               </>
             ) : product.category === '化妆品原料' ? (
               <>
-                <li class="flex items-start gap-3">
-                  <span class="text-green-500 mt-1">✅</span>
-                  <span class="text-gray-600">Skincare: Creams, serums, masks, lotions</span>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-green-500 mt-1 text-xl">✅</span>
+                  <span class="text-gray-700">Skincare: Creams, serums, masks, lotions</span>
                 </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-green-500 mt-1">✅</span>
-                  <span class="text-gray-600">Cosmetics: Makeup, hair care, personal care products</span>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-green-500 mt-1 text-xl">✅</span>
+                  <span class="text-gray-700">Cosmetics: Makeup, hair care, personal care products</span>
                 </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-green-500 mt-1">✅</span>
-                  <span class="text-gray-600">Meets all global cosmetic regulatory requirements</span>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-green-500 mt-1 text-xl">✅</span>
+                  <span class="text-gray-700">Meets all global cosmetic regulatory requirements</span>
                 </li>
               </>
             ) : (
               <>
-                <li class="flex items-start gap-3">
-                  <span class="text-green-500 mt-1">✅</span>
-                  <span class="text-gray-600">Food & Beverages: Juices, drinks, bakery products</span>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-green-500 mt-1 text-xl">✅</span>
+                  <span class="text-gray-700">Food & Beverages: Juices, drinks, bakery products</span>
                 </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-green-500 mt-1">✅</span>
-                  <span class="text-gray-600">Health supplements: Nutritional fortifiers, capsules, tablets</span>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-green-500 mt-1 text-xl">✅</span>
+                  <span class="text-gray-700">Health supplements: Nutritional fortifiers, capsules, tablets</span>
                 </li>
-                <li class="flex items-start gap-3">
-                  <span class="text-green-500 mt-1">✅</span>
-                  <span class="text-gray-600">Meets international food safety standards</span>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-green-500 mt-1 text-xl">✅</span>
+                  <span class="text-gray-700">Meets international food safety standards</span>
                 </li>
               </>
             )}
           </ul>
-          <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Packaging Options</h3>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3">
-              <span class="text-green-500 mt-1">📦</span>
-              <span class="text-gray-600">1kg/bag (aluminum foil bag)</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-green-500 mt-1">📦</span>
-              <span class="text-gray-600">25kg/drum (fiber drum, double plastic bag inside)</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-green-500 mt-1">📦</span>
-              <span class="text-gray-600">Custom packaging available upon request</span>
-            </li>
-          </ul>
-          <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Certifications</h3>
-          <p class="text-gray-600 mb-4">We can provide the following certification documents from our cooperative factories:</p>
-          <div class="flex flex-wrap gap-3">
-            {product.certifications.map(cert => (
-              <span class="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm font-medium">{cert}</span>
-            ))}
+        </div>
+      </div>
+
+      <div class="tab-content hidden" id="packaging-content">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Packaging Options</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 text-lg">
+                <span class="text-green-500 mt-1 text-xl">📦</span>
+                <span class="text-gray-700">1kg/bag (aluminum foil bag, sealed and moisture-proof)</span>
+              </li>
+              <li class="flex items-start gap-3 text-lg">
+                <span class="text-green-500 mt-1 text-xl">📦</span>
+                <span class="text-gray-700">25kg/drum (fiber drum, double plastic bag inside)</span>
+              </li>
+              <li class="flex items-start gap-3 text-lg">
+                <span class="text-green-500 mt-1 text-xl">📦</span>
+                <span class="text-gray-700">Custom packaging available upon request (printing logo, custom size etc.)</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Storage Conditions</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 text-lg">
+                <span class="text-green-500 mt-1 text-xl">🌡️</span>
+                <span class="text-gray-700">Store in cool, dry place, temperature 0-25°C</span>
+              </li>
+              <li class="flex items-start gap-3 text-lg">
+                <span class="text-green-500 mt-1 text-xl">☀️</span>
+                <span class="text-gray-700">Away from direct sunlight and strong odors</span>
+              </li>
+              <li class="flex items-start gap-3 text-lg">
+                <span class="text-green-500 mt-1 text-xl">⏳</span>
+                <span class="text-gray-700">Shelf life: 2 years when properly stored</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
+
+      <div class="tab-content hidden" id="certifications-content">
+        <div class="max-w-3xl">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Available Certifications</h3>
+          <p class="text-gray-700 text-lg mb-8">We can provide full set of certification documents from our cooperative factories, all products meet international quality standards:</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {product.certifications.map(cert => (
+              <div class="bg-gray-50 rounded-lg p-6 text-center">
+                <span class="block text-2xl mb-2">📜</span>
+                <span class="text-gray-900 font-medium">{cert}</span>
+              </div>
+            ))}
+          </div>
+          <p class="text-gray-600 mt-8">All certificates are verifiable, contact us for full copies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 标签切换脚本 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetTab = btn.getAttribute('data-tab');
+          
+          // 切换按钮激活状态
+          tabBtns.forEach(b => {
+            b.classList.remove('font-bold', 'text-green-500', 'border-b-2', 'border-green-500');
+            b.classList.add('font-medium', 'text-gray-500');
+          });
+          btn.classList.add('font-bold', 'text-green-500', 'border-b-2', 'border-green-500');
+          btn.classList.remove('font-medium', 'text-gray-500');
+          
+          // 切换内容显示
+          tabContents.forEach(content => {
+            content.classList.add('hidden');
+          });
+          document.getElementById(`${targetTab}-content`).classList.remove('hidden');
+        });
+      });
+    });
+  </script>
     </div>
   </section>
 
