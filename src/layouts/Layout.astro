@@ -2,8 +2,17 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import productData from '../data/products.json';
 
 const { title = "Weiyijie Bio - Premium Plant Extracts, Cosmetic & Food Ingredients", description = "10+ years supplier of high-quality plant extracts, cosmetic raw materials, and food additives. FDA/REACH/GMP certified, small MOQ supported, global delivery." } = Astro.props;
+
+// 准备前端搜索用的产品数据
+const searchProducts = productData.products.map(p => ({
+  name: p.name,
+  slug: p.slug,
+  category: p.category,
+  description: p.description
+}));
 ---
 
 <!doctype html>
@@ -16,10 +25,93 @@ const { title = "Weiyijie Bio - Premium Plant Extracts, Cosmetic & Food Ingredie
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="keywords" content="plant extracts, cosmetic ingredients, food additives, bulk supplier, GMP certified, FDA approved" />
+    <!-- Fuse.js for fuzzy search -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
 	</head>
 	<body class="font-sans text-gray-800">
 		<Header />
 		<slot />
 		<Footer />
+
+    <!-- Search data -->
+    <script id="searchData" type="application/json">
+      ${JSON.stringify(searchProducts)}
+    </script>
+
+    <!-- Search functionality -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 产品数据
+        const products = JSON.parse(document.getElementById('searchData').textContent);
+        
+        // Fuse.js配置
+        const fuseOptions = {
+          keys: ['name', 'description', 'category'],
+          threshold: 0.3, // 模糊匹配灵敏度
+          includeScore: true
+        };
+        
+        const fuse = new Fuse(products, fuseOptions);
+        
+        // 搜索元素
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        const searchResultsList = document.getElementById('searchResultsList');
+        const noResults = document.getElementById('noResults');
+        
+        // 渲染搜索结果
+        function renderResults(results) {
+          searchResultsList.innerHTML = '';
+          
+          if (results.length === 0) {
+            noResults.classList.remove('hidden');
+            searchResults.classList.remove('hidden');
+            return;
+          }
+          
+          noResults.classList.add('hidden');
+          results.forEach(result => {
+            const product = result.item;
+            const item = document.createElement('a');
+            item.href = `/product/${product.slug}`;
+            item.className = 'block px-6 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0';
+            item.innerHTML = `
+              <div class="font-medium text-gray-900">${product.name}</div>
+              <div class="text-sm text-gray-500 line-clamp-1">${product.category} • ${product.description}</div>
+            `;
+            searchResultsList.appendChild(item);
+          });
+          
+          searchResults.classList.remove('hidden');
+        }
+        
+        // 搜索输入事件
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.trim();
+          
+          if (query.length < 2) {
+            searchResults.classList.add('hidden');
+            return;
+          }
+          
+          const results = fuse.search(query);
+          renderResults(results);
+        });
+        
+        // 点击页面其他地方关闭搜索结果
+        document.addEventListener('click', (e) => {
+          if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.classList.add('hidden');
+          }
+        });
+        
+        // 按ESC关闭搜索结果
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            searchResults.classList.add('hidden');
+          }
+        });
+      });
+    </script>
 	</body>
 </html>

@@ -93,10 +93,37 @@ if (!product) {
             <h3 class="text-xl font-bold text-gray-900 mb-4">Technical Specifications</h3>
             <table class="w-full">
               {product.specifications.map((spec, index) => {
-                // 拆分规格项为键值对
-                const parts = spec.split(/:|：|-|–/).map(s => s.trim());
-                const key = parts[0] || `Specification ${index + 1}`;
-                const value = parts.slice(1).join(': ') || spec;
+                // 常见的规格参数名列表，用于智能拆分
+                const specKeys = [
+                  'Appearance', 'Plant Part', 'Active Ingredient', 'Test Method', 'Purity', 'Assay', 
+                  'Loss on Drying', 'Heavy Metals', 'Ash Content', 'Particle Size', 'Solubility',
+                  'Molecular Weight', 'CAS No', 'EINECS No', 'MF', 'Odor', 'Taste', 'pH Value',
+                  'Storage Condition', 'Shelf Life', 'Grade', 'Extraction Type', 'Country of Origin'
+                ];
+                
+                let key = `Specification ${index + 1}`;
+                let value = spec;
+                
+                // 优先匹配完整的参数名进行拆分
+                for (const sk of specKeys) {
+                  const regex = new RegExp(`^(${sk})(.*)$`, 'i');
+                  const match = spec.match(regex);
+                  if (match && match[2].trim()) {
+                    key = sk;
+                    value = match[2].trim();
+                    break;
+                  }
+                }
+                
+                // 如果没匹配到，再尝试用分隔符拆分
+                if (key === `Specification ${index + 1}`) {
+                  const parts = spec.split(/:|：|-|–/).map(s => s.trim());
+                  if (parts.length >= 2 && parts[1]) {
+                    key = parts[0];
+                    value = parts.slice(1).join(': ');
+                  }
+                }
+                
                 return (
                   <tr class="border-b border-gray-200">
                     <td class="py-3 font-medium text-gray-900">{key}</td>
