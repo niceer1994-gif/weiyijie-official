@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <!-- Hero Section: 顶部实拍图 -->
+  <!-- Hero Section: 核心转化区 -->
   <section class="relative h-[90vh] bg-gradient-to-r from-green-900/80 to-green-800/80 flex items-center">
     <img 
       src="https://images.unsplash.com/photo-1586788224331-947f68671cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
@@ -11,27 +11,68 @@ import Layout from '../layouts/Layout.astro';
       class="absolute inset-0 w-full h-full object-cover -z-10"
     />
     <div class="container mx-auto px-6">
-      <div class="max-w-3xl">
+      <div class="max-w-4xl">
+        <p class="text-green-200 font-semibold text-lg mb-3 uppercase tracking-wider">Trusted supplier since 2014</p>
         <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white mb-4 leading-tight">
-          Premium Natural Ingredients<br>For Your Cosmetic & Food Products
+          Wholesale Plant Extracts, Cosmetic Ingredients & Food Additives<br>For Manufacturers, Brands & Formulators
         </h1>
-        <p class="text-[clamp(1rem,2vw,1.25rem)] text-green-50 mb-8 max-w-2xl">
-          10+ years of professional supply of plant extracts, cosmetic raw materials and food additives. FDA/REACH/GMP certified, small MOQ supported, global fast delivery.
+        <p class="text-[clamp(1rem,2vw,1.25rem)] text-green-50 mb-8 max-w-3xl">
+          10+ years experience supplying high-quality natural ingredients. FDA/REACH/GMP certified, 1kg MOQ supported, 7-15 days global delivery, 24h response guarantee.
         </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#products" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-lg transition-all transform hover:scale-105">
-            Browse Products
+        <!-- 核心CTA按钮组 -->
+        <div class="flex flex-wrap gap-4 mb-8">
+          <a href="#contact" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-lg transition-all transform hover:scale-105 shadow-lg">
+            📥 Get Bulk Quote in 24h
           </a>
-          <a href="#contact" class="bg-white hover:bg-gray-100 text-green-800 font-semibold px-8 py-3 rounded-lg transition-all transform hover:scale-105">
-            Get Quote Now
+          <a href="#contact" class="bg-white hover:bg-gray-100 text-green-800 font-semibold px-8 py-3 rounded-lg transition-all transform hover:scale-105 shadow-lg">
+            🧪 Request Free Sample / COA
+          </a>
+        </div>
+        <!-- 分人群入口 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl">
+          <a href="/category/cosmetic-ingredients" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white p-4 rounded-lg transition-all text-center border border-white/20">
+            <p class="font-semibold">For Cosmetic Brands →</p>
+            <p class="text-sm text-green-100">High-purity active ingredients</p>
+          </a>
+          <a href="/category/plant-extracts" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white p-4 rounded-lg transition-all text-center border border-white/20">
+            <p class="font-semibold">For Supplement Factories →</p>
+            <p class="text-sm text-green-100">Standardized plant extracts</p>
+          </a>
+          <a href="/category/food-additives" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white p-4 rounded-lg transition-all text-center border border-white/20">
+            <p class="font-semibold">For Food & Beverage →</p>
+            <p class="text-sm text-green-100">Natural food grade additives</p>
           </a>
         </div>
       </div>
     </div>
     <!-- 悬浮询盘按钮 -->
     <a href="#contact" class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-lg font-semibold z-50 transition-all hover:scale-110">
-      📩 Request Quote
+      📩 Get Instant Quote
     </a>
+  </section>
+
+  <!-- 信任证据栏 -->
+  <section class="py-6 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-green-600 mb-1">10+</p>
+          <p class="text-gray-600 text-sm">Years Industry Experience</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-green-600 mb-1">500+</p>
+          <p class="text-gray-600 text-sm">Global Happy Customers</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-green-600 mb-1">30+</p>
+          <p class="text-gray-600 text-sm">Countries Served</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-green-600 mb-1">24h</p>
+          <p class="text-gray-600 text-sm">Average Response Time</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Product Categories Section: 提前的产品分类导航 -->
@@ -41,7 +82,7 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">Our Product Categories</h2>
         <p class="text-gray-600 max-w-2xl mx-auto">Select from our wide range of high-quality natural ingredients, all certified and available in small batches.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         <!-- 分类卡片1 -->
         <a href="/category/plant-extracts" class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 group">
           <div class="h-48 rounded-lg overflow-hidden mb-4">
@@ -80,6 +121,91 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="text-xl font-bold text-gray-900 mb-2">Food Additives</h3>
           <p class="text-gray-600 mb-4">Natural food additives, including preservatives, flavor enhancers, nutritional fortifiers, etc., all meet food safety standards.</p>
           <span class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Products →</span>
+        </a>
+      </div>
+
+      <!-- 主推产品展示 -->
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">Most Popular Products</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Our best-selling ingredients trusted by customers worldwide, available in small MOQ with full certifications.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 产品1：3-O-乙基抗坏血酸 -->
+        <a href="/product/high-quality-pure-natural-vitamin-c-powder-for-food-and-beverage" class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 group">
+          <div class="h-48 rounded-lg overflow-hidden mb-4 bg-gray-100 flex items-center justify-center">
+            <span class="text-5xl">🍊</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">3-O-Ethyl Ascorbic Acid</h3>
+          <p class="text-gray-600 mb-3">Stable vitamin C derivative for skin brightening, 99% purity, cosmetic grade.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-green-600 font-semibold">MOQ: 1kg</span>
+            <span class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
+          </div>
+        </a>
+        <!-- 产品2：壬二酸 -->
+        <a href="#" class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 group">
+          <div class="h-48 rounded-lg overflow-hidden mb-4 bg-gray-100 flex items-center justify-center">
+            <span class="text-5xl">🧴</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Azelaic Acid 99%</h3>
+          <p class="text-gray-600 mb-3">For acne treatment and skin brightening, cosmetic grade, complete certifications.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-green-600 font-semibold">MOQ: 1kg</span>
+            <span class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
+          </div>
+        </a>
+        <!-- 产品3：透明质酸钠 -->
+        <a href="/product/99-hyaluronic-acid-powder-sodium-hyaluronate-for-cosmetics-material" class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 group">
+          <div class="h-48 rounded-lg overflow-hidden mb-4 bg-gray-100 flex items-center justify-center">
+            <span class="text-5xl">💧</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Sodium Hyaluronate</h3>
+          <p class="text-gray-600 mb-3">Hyaluronic acid powder with different molecular weights for moisturizing.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-green-600 font-semibold">MOQ: 1kg</span>
+            <span class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
+          </div>
+        </a>
+        <!-- 产品4：葡萄籽提取物 -->
+        <a href="/product/high-quality-grape-seed-extract-95-proanthocyanidins" class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 group">
+          <div class="h-48 rounded-lg overflow-hidden mb-4 bg-gray-100 flex items-center justify-center">
+            <span class="text-5xl">🍇</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Grape Seed Extract 95% OPC</h3>
+          <p class="text-gray-600 mb-3">Powerful antioxidant for supplements and cosmetics, GMP certified.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-green-600 font-semibold">MOQ: 1kg</span>
+            <span class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
+          </div>
+        </a>
+        <!-- 产品5：姜黄素 -->
+        <a href="/product/premium-turmeric-extract-with-95-curcuminoids" class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 group">
+          <div class="h-48 rounded-lg overflow-hidden mb-4 bg-gray-100 flex items-center justify-center">
+            <span class="text-5xl">🌿</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Curcumin 95%</h3>
+          <p class="text-gray-600 mb-3">Turmeric extract for anti-inflammatory supplements, food grade.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-green-600 font-semibold">MOQ: 1kg</span>
+            <span class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
+          </div>
+        </a>
+        <!-- 产品6：甜菊糖苷 -->
+        <a href="/product/high-quality-bulk-sweetener-stevioside-powder" class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 group">
+          <div class="h-48 rounded-lg overflow-hidden mb-4 bg-gray-100 flex items-center justify-center">
+            <span class="text-5xl">🍬</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Stevioside 90%~99%</h3>
+          <p class="text-gray-600 mb-3">Natural zero-calorie sweetener for food and beverage, Kosher/Halal certified.</p>
+          <div class="flex items-center justify-between">
+            <span class="text-green-600 font-semibold">MOQ: 1kg</span>
+            <span class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">View Details →</span>
+          </div>
+        </a>
+      </div>
+      <div class="text-center mt-12">
+        <a href="#contact" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-lg inline-block transition-all">
+          Request Quote for These Products
         </a>
       </div>
     </div>
@@ -347,35 +473,86 @@ import Layout from '../layouts/Layout.astro';
                 <input type="text" name="last_name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
               </div>
             </div>
-            <div class="mb-4">
-              <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-              <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Country/Region *</label>
+                <input type="text" name="country" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="e.g. United States, Germany">
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                <input type="text" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Company Type *</label>
+                <select name="company_type" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                  <option value="">Select your business type</option>
+                  <option value="cosmetic_brand">Cosmetic Brand/Manufacturer</option>
+                  <option value="supplement_manufacturer">Supplement/Health Product Manufacturer</option>
+                  <option value="food_beverage_manufacturer">Food & Beverage Manufacturer</option>
+                  <option value="trading_distributor">Trading Company/Distributor</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Product Interest *</label>
+                <select name="product_interest" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                  <option value="">Select product category</option>
+                  <option value="plant-extracts">Plant Extracts</option>
+                  <option value="cosmetic-ingredients">Cosmetic Raw Materials</option>
+                  <option value="food-additives">Food Additives</option>
+                  <option value="multiple">Multiple Categories</option>
+                  <option value="custom">Custom Product</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Required Quantity</label>
+                <input type="text" name="quantity" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="e.g. 100kg, 500kg, 1MT">
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Target Application</label>
+                <input type="text" name="application" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="e.g. Skin care serum, sports supplements, energy drinks">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Certifications Required</label>
+                <input type="text" name="certifications" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="e.g. FDA, REACH, Kosher, Halal, Organic">
+              </div>
             </div>
             <div class="mb-4">
-              <label class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
-              <input type="text" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+              <label class="block text-sm font-medium text-gray-700 mb-1">What do you need? *</label>
+              <div class="flex flex-wrap gap-3 mb-3">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="need[]" value="quote" class="h-4 w-4 text-green-600">
+                  <span class="text-sm text-gray-700">Bulk Price Quote</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="need[]" value="sample" class="h-4 w-4 text-green-600">
+                  <span class="text-sm text-gray-700">Free Sample</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="need[]" value="coa" class="h-4 w-4 text-green-600">
+                  <span class="text-sm text-gray-700">COA / Certification Documents</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="need[]" value="custom" class="h-4 w-4 text-green-600">
+                  <span class="text-sm text-gray-700">Custom Specification/Packaging</span>
+                </label>
+              </div>
+              <textarea name="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Please tell us any other requirements, purity needs, etc."></textarea>
             </div>
-            <div class="mb-4">
-              <label class="block text-sm font-medium text-gray-700 mb-1">Product Interest *</label>
-              <select name="product_interest" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                <option value="">Select product category</option>
-                <option value="plant-extracts">Plant Extracts</option>
-                <option value="cosmetic-ingredients">Cosmetic Raw Materials</option>
-                <option value="food-additives">Food Additives</option>
-                <option value="custom">Custom Product</option>
-              </select>
-            </div>
-            <div class="mb-4">
-              <label class="block text-sm font-medium text-gray-700 mb-1">Required Quantity</label>
-              <input type="text" name="quantity" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="e.g. 100kg, 500kg">
-            </div>
-            <div class="mb-4">
-              <label class="block text-sm font-medium text-gray-700 mb-1">Message *</label>
-              <textarea name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Please tell us your specific needs, purity requirements, destination country, etc."></textarea>
-            </div>
-            <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition-all">
-              Send Request
+            <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition-all text-lg">
+              Send Request Now
             </button>
+            <p class="text-xs text-gray-500 text-center mt-3">We will reply to you within 24 hours on working days.</p>
           </form>
         </div>
       </div>
