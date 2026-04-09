@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Blog - Weiyijie Bio">
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h1 class="text-[clamp(2rem,4vw,3rem)] font-bold text-gray-900 mb-4">Our Blog</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">Stay updated with the latest industry news, product insights, and application guides for natural ingredients.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 文章1 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all group">
+          <div class="h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1556740755-069a40165b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="How to Choose the Right Plant Extract Supplier" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <span class="text-sm text-green-600 font-semibold mb-2 inline-block">Industry Guide</span>
+            <h2 class="text-xl font-bold text-gray-900 mb-3">How to Choose the Right Plant Extract Supplier for Your Business</h2>
+            <p class="text-gray-600 mb-4">Choosing the right plant extract supplier is crucial for your product quality and business success. Learn the key factors to consider when selecting a supplier, including certifications, quality control, MOQ, and customer service.</p>
+            <a href="#" class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">Read More →</a>
+          </div>
+        </div>
+
+        <!-- 文章2 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all group">
+          <div class="h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="Top 10 Cosmetic Active Ingredients in 2024" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <span class="text-sm text-green-600 font-semibold mb-2 inline-block">Cosmetic Ingredients</span>
+            <h2 class="text-xl font-bold text-gray-900 mb-3">Top 10 Cosmetic Active Ingredients in 2024: Trends and Applications</h2>
+            <p class="text-gray-600 mb-4">Discover the most popular cosmetic active ingredients in 2024, including their benefits, applications, and market trends. From niacinamide to hyaluronic acid, learn which ingredients are in high demand this year.</p>
+            <a href="#" class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">Read More →</a>
+          </div>
+        </div>
+
+        <!-- 文章3 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all group">
+          <div class="h-48 overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1579684280648-a697719b753e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="Natural Food Additives: Benefits and Safety" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <span class="text-sm text-green-600 font-semibold mb-2 inline-block">Food Additives</span>
+            <h2 class="text-xl font-bold text-gray-900 mb-3">Natural Food Additives: Benefits, Safety, and Market Trends</h2>
+            <p class="text-gray-600 mb-4">Consumers are increasingly demanding natural food additives instead of synthetic ones. Learn about the benefits of natural food additives, their safety standards, and the latest market trends in this growing industry.</p>
+            <a href="#" class="text-green-500 font-semibold group-hover:translate-x-2 inline-block transition-all">Read More →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-gray-600 mb-6">Want to receive our latest blog articles and industry updates directly to your inbox? Subscribe to our newsletter today.</p>
+        <a href="#contact" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-lg inline-block transition-all">
+          Subscribe to Newsletter
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
